@@ -60,7 +60,9 @@ public class PlayerController : MonoBehaviour, IDamage
     bool Crouching;
     bool footstepsPlaying;
     //slide
-    private PlayerSlide playerSlide;
+    //private PlayerSlide playerSlide;
+    //dash
+    //private PlayerDash playerDash;
 
     private Coroutine invisibilityCoroutine;
     private Coroutine shieldCoroutine;
@@ -127,6 +129,7 @@ public class PlayerController : MonoBehaviour, IDamage
 
         //syncs are times across computers for performaces 
         controller.Move(move * Time.deltaTime * playerSpeed);
+        //player dash
 
         //will take a button input thats press down 
         if (Input.GetButtonDown("Jump") && jumpedtimes <= jumpMax)
@@ -190,7 +193,7 @@ public class PlayerController : MonoBehaviour, IDamage
         {
             //start slide
             PlayerSlide playerSlideComponent = GetComponent<PlayerSlide>();
-            Vector3 slideDirection = transform.forward;
+            //Vector3 slideDirection = transform.forward;
 
             if(playerSlideComponent != null && !playerSlideComponent.IsSliding())
             {

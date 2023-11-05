@@ -4990,6 +4990,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Platform2
       objectReference: {fileID: 0}
+    - target: {fileID: 3579976812950933755, guid: 60e6b1ef915335446a174a9f0e301afa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4175641219913856934, guid: 60e6b1ef915335446a174a9f0e301afa, type: 3}
       propertyPath: speed
       value: 3
@@ -5879,6 +5883,10 @@ PrefabInstance:
       propertyPath: loseBarrier
       value: 
       objectReference: {fileID: 918106206}
+    - target: {fileID: 5392944267778168528, guid: 7f78ccb97db990846a6fb78fe312e7a2, type: 3}
+      propertyPath: riseSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8972135208620382848, guid: 7f78ccb97db990846a6fb78fe312e7a2, type: 3}
       propertyPath: m_Name
       value: Water

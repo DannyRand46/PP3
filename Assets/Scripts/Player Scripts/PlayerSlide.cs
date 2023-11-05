@@ -17,13 +17,14 @@ public class PlayerSlide : MonoBehaviour
 
     private float originalCameraPositionY;
     private float originalHeight;
-    private float originalSpeed;
+    
     private bool isSliding;
 
     void Start()
     {
         originalHeight = controller.height;
         originalCameraPositionY = cameraTransform.localPosition.y;
+        
     }
 
 
@@ -33,7 +34,7 @@ public class PlayerSlide : MonoBehaviour
             return;
 
         isSliding = true;
-        originalSpeed = currentSpeed;
+        
         slideDirection = playerForward.normalized;
 
         controller.height *= slideHeight;
