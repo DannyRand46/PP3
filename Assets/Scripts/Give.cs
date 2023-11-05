@@ -21,4 +21,10 @@ public class Give : MonoBehaviour
         CoinManager.coins += 50;
         CoinManager.updateCoins();
     }
+
+    public void coinConsumption()
+    {
+        CoinManager.coins -= 50;
+        coinManager.updateCoins();
+    }
 }
