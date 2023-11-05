@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour, IDamage
     //slide
     //private PlayerSlide playerSlide;
     //dash
-    //private PlayerDash playerDash;
+    private PlayerDash playerDash;
 
     private Coroutine invisibilityCoroutine;
     private Coroutine shieldCoroutine;
@@ -73,6 +73,7 @@ public class PlayerController : MonoBehaviour, IDamage
         Layer_Mask = LayerMask.GetMask("Wall") + LayerMask.GetMask("Ground");
         HPOrig = Hp;
         spawnPlayer();
+        playerDash = GetComponent<PlayerDash>();
     }
 
 
@@ -86,6 +87,21 @@ public class PlayerController : MonoBehaviour, IDamage
             
             movement();
             Sprint();
+            //dash
+            if(Input.GetButtonDown("Dash"))
+            {
+                if(playerDash != null && !playerDash.IsDashing())
+                {
+                    Vector3 dashDirection = move.normalized;
+                    
+                    if(dashDirection == Vector3.zero)
+                    {
+                        dashDirection = transform.forward;
+                    }
+
+                    playerDash.StartDash(dashDirection);
+                }
+            }
 
             if (invisibleCooldownTimer > 0f)
             {
@@ -129,7 +145,7 @@ public class PlayerController : MonoBehaviour, IDamage
 
         //syncs are times across computers for performaces 
         controller.Move(move * Time.deltaTime * playerSpeed);
-        //player dash
+        
 
         //will take a button input thats press down 
         if (Input.GetButtonDown("Jump") && jumpedtimes <= jumpMax)
@@ -245,7 +261,7 @@ public class PlayerController : MonoBehaviour, IDamage
 
     public void TakeDamage(int amount)
     {
-        if (shielded)
+        if (shielded || playerDash != null && playerDash.IsDashing())
         { return; }
 
         if (damageReduction)
