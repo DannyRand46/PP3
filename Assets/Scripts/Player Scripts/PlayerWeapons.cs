@@ -14,6 +14,10 @@ public class PlayerWeapons : MonoBehaviour
     [SerializeField] int shootDamage;
     [SerializeField] int shootDist;
 
+    [Header("~~~~~ Weapon Power Ups ~~~~~")]
+    [SerializeField] private bool damageBoosted;
+    [SerializeField] private float damageBoostAmount = 1.2f;
+
     int selectedweapon = 0;
     bool isShooting;
     bool reload;
