@@ -41,6 +41,7 @@ public class AIMino : MonoBehaviour, IDamage
     [Range(1, 30)][SerializeField] float summonCooldown;
 
     float currSpeed;
+    float minoMaxHealth;
     float scalar;
     float stageTwoSpeed;
     bool isGrowing;
@@ -65,17 +66,18 @@ public class AIMino : MonoBehaviour, IDamage
         isChargeAttacking = false;
         chargeAttackCooldownTracker = 0;
         summonCooldownTracker = 0;
+        minoMaxHealth = HP;
     }
 
     // Update is called once per frame
     void Update()
     {
         //debug and testing keys for minatour stages
-        if (Input.GetKeyDown(KeyCode.Keypad8))
+        if (HP <= minoMaxHealth/2 && currentStage == bossStages.FIRST_STAGE)
         {
             StartStageTwo();
         }
-        if (Input.GetKeyDown(KeyCode.Keypad9))
+        if (HP <= minoMaxHealth/4 && currentStage == bossStages.SECOND_STAGE)
         {
             StartStageThree();
             

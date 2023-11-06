@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 368406922328078340}
   - component: {fileID: 6855787732374934253}
   - component: {fileID: 7166801396116980800}
+  - component: {fileID: 2068089707752569165}
+  - component: {fileID: 4507245725056965020}
   - component: {fileID: 3607773146104892616}
   - component: {fileID: 2339815084857857471}
   - component: {fileID: 302178282234110217}
@@ -89,6 +91,17 @@ MonoBehaviour:
   - {fileID: 8300000, guid: eafb3d602bb84ef4caa0fd965c751081, type: 3}
   - {fileID: 8300000, guid: 311f66948ac62ce489502672dfa151f4, type: 3}
   audFootStepsvol: 0.1
+  damageReduction: 0
+  damageReductionEffect: 0.2
+  shielded: 0
+  speedBoosted: 0
+  speedBoostEffect: 0.25
+  healthBoosted: 0
+  healthBoostEffect: 0.2
+  isInvisible: 0
+  timeInvisible: 30
+  invisibleCooldown: 30
+  invisibleCooldownTimer: 0
   playerVelocity: {x: 0, y: 0, z: 0}
 --- !u!114 &6855787732374934253
 MonoBehaviour:
@@ -109,6 +122,8 @@ MonoBehaviour:
   shootRate: 0
   shootDamage: 0
   shootDist: 0
+  damageBoosted: 0
+  damageBoostAmount: 1.2
 --- !u!114 &7166801396116980800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +143,38 @@ MonoBehaviour:
   staminaSprintMinimum: 0
   staminaJumpMinimum: 0
   timeUntilRegenStamina: 3
+--- !u!114 &2068089707752569165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34362289372371928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fab5e8eded2c6314e8c63e317810912b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 1653064986366378708}
+  slideDuration: 0.7
+  slideHeight: 0.5
+  cameraTransform: {fileID: 6917442629206589166}
+  cameraLoweredPositionY: 0.5
+--- !u!114 &4507245725056965020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34362289372371928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c13c6cc05477a74babf2362d5d59887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 1653064986366378708}
+  dashDuration: 0.3
+  dashSpeed: 30
 --- !u!33 &3607773146104892616
 MeshFilter:
   m_ObjectHideFlags: 0

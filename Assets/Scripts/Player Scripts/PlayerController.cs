@@ -36,6 +36,19 @@ public class PlayerController : MonoBehaviour, IDamage
     [SerializeField] AudioClip[] AudFootSteps;
     [Range(0, 1)][SerializeField] float audFootStepsvol;
 
+    [Header("~~~~~ Power Ups ~~~~~")]
+    [SerializeField] public bool damageReduction = false;
+    [SerializeField] public float damageReductionEffect = 0.2f;
+    [SerializeField] public bool shielded = false;
+    [SerializeField] public bool speedBoosted = false;
+    [SerializeField] public float speedBoostEffect = 0.25f;
+    [SerializeField] public bool healthBoosted = false;
+    [SerializeField] public float healthBoostEffect = 0.2f;
+    [SerializeField] bool isInvisible = false;
+    [SerializeField] float timeInvisible = 30f;
+    [SerializeField] float invisibleCooldown = 30f;
+    [SerializeField] float invisibleCooldownTimer = 0f;
+
     // private variabels 
     public Vector3 playerVelocity;
     private bool groundedPlayer;
@@ -47,7 +60,12 @@ public class PlayerController : MonoBehaviour, IDamage
     bool Crouching;
     bool footstepsPlaying;
     //slide
-    private PlayerSlide playerSlide;
+    //private PlayerSlide playerSlide;
+    //dash
+    private PlayerDash playerDash;
+
+    private Coroutine invisibilityCoroutine;
+    private Coroutine shieldCoroutine;
 
     private void Start()
     {
@@ -55,6 +73,7 @@ public class PlayerController : MonoBehaviour, IDamage
         Layer_Mask = LayerMask.GetMask("Wall") + LayerMask.GetMask("Ground");
         HPOrig = Hp;
         spawnPlayer();
+        playerDash = GetComponent<PlayerDash>();
     }
 
 
@@ -68,6 +87,26 @@ public class PlayerController : MonoBehaviour, IDamage
             
             movement();
             Sprint();
+            //dash
+            if(Input.GetButtonDown("Dash"))
+            {
+                if(playerDash != null && !playerDash.IsDashing())
+                {
+                    Vector3 dashDirection = move.normalized;
+                    
+                    if(dashDirection == Vector3.zero)
+                    {
+                        dashDirection = transform.forward;
+                    }
+
+                    playerDash.StartDash(dashDirection);
+                }
+            }
+
+            if (invisibleCooldownTimer > 0f)
+            {
+                invisibleCooldown -= Time.deltaTime;
+            }
         }
     }
 
@@ -106,6 +145,7 @@ public class PlayerController : MonoBehaviour, IDamage
 
         //syncs are times across computers for performaces 
         controller.Move(move * Time.deltaTime * playerSpeed);
+        
 
         //will take a button input thats press down 
         if (Input.GetButtonDown("Jump") && jumpedtimes <= jumpMax)
@@ -169,7 +209,7 @@ public class PlayerController : MonoBehaviour, IDamage
         {
             //start slide
             PlayerSlide playerSlideComponent = GetComponent<PlayerSlide>();
-            Vector3 slideDirection = transform.forward;
+            //Vector3 slideDirection = transform.forward;
 
             if(playerSlideComponent != null && !playerSlideComponent.IsSliding())
             {
@@ -221,6 +261,14 @@ public class PlayerController : MonoBehaviour, IDamage
 
     public void TakeDamage(int amount)
     {
+        if (shielded || playerDash != null && playerDash.IsDashing())
+        { return; }
+
+        if (damageReduction)
+        {
+            amount = Mathf.CeilToInt(amount * (1f - damageReductionEffect));
+        }
+
         StartCoroutine(GameManager.instance.flash());
         Hp -= amount;
         UpdatePlayerUi();
@@ -286,6 +334,143 @@ public class PlayerController : MonoBehaviour, IDamage
             controller.enabled = true;
         }
     }
+
+    public void DamageReduction()
+    {
+        damageReduction = true;
+    }
+
+    public void DamageReductionOff()
+    { 
+        damageReduction = false; 
+    }
+
+    public void ShieldOn()
+    {
+        if (!shielded)
+        {
+            shielded = true;
+
+            if (shieldCoroutine != null)
+            {
+                StopCoroutine(shieldCoroutine);
+            }
+            shieldCoroutine = StartCoroutine(ShieldRoutine());
+        }
+
+    }
+
+    public void ShieldOff()
+    {
+        if (shielded)
+        {
+            shielded = false;
+
+            if (shieldCoroutine != null)
+            {
+                StopCoroutine(shieldCoroutine);
+                shieldCoroutine = null;
+            }
+        }
+    }
+    public IEnumerator ShieldRoutine()
+    {
+        yield return new WaitForSeconds(5);
+        ShieldOff();
+        yield return new WaitForSeconds(25);
+        ShieldOn();
+    }
+
+    public void SpeedBoostOn()
+    {
+        speedBoosted = true;
+        playerSpeed *= (1 + speedBoostEffect);
+    }
+
+    public void SpeedBoostOff()
+    {
+        if (speedBoosted)
+        {
+            playerSpeed /= (1 + speedBoostEffect);
+            speedBoosted = false;
+        }
+    }
+
+    public void HealthBoostOn()
+    {
+        if (!healthBoosted)
+        {
+            healthBoosted = true;
+            HPOrig *= (1 + healthBoostEffect);
+            Hp *= (1 + healthBoostEffect);
+
+            UpdatePlayerUi();
+        }
+    }
+
+    public void HealthBoostOff()
+    {
+        if (healthBoosted)
+        {
+            healthBoosted = false;
+            HPOrig /= (1 + healthBoostEffect);
+            Hp /= (1 + healthBoostEffect);
+
+            if (Hp > HPOrig)
+            {
+                Hp = HPOrig;
+            }
+
+            UpdatePlayerUi();
+        }
+    }
+
+    public void InvisibilityActive()
+    {
+        if (!isInvisible && invisibleCooldownTimer <= 0f)
+        {
+            if (invisibilityCoroutine != null)
+            {
+                StopCoroutine(invisibilityCoroutine);
+            }
+
+            invisibilityCoroutine = StartCoroutine(InvisibilityEffect());
+        }
+    }
+
+    public IEnumerator InvisibilityEffect()
+    {
+        isInvisible = true;
+        invisibleCooldownTimer = invisibleCooldown;
+        yield return new WaitForSeconds(timeInvisible);
+
+        isInvisible = false;
+
+        while (invisibleCooldownTimer > 0)
+        {
+            invisibleCooldownTimer -= Time.deltaTime;
+            yield return null;
+
+            invisibilityCoroutine = null;
+        }
+    }
+
+    public void InvisibilityOff()
+    {
+        if (isInvisible)
+        {
+            if (invisibilityCoroutine != null)
+            {
+                StopCoroutine(invisibilityCoroutine);
+                invisibilityCoroutine = null;
+            }
+
+            isInvisible = false;
+            invisibleCooldownTimer = invisibleCooldown;
+        }
+    }
+
+    public bool IsInvisible() { return isInvisible; }
 
 
 }

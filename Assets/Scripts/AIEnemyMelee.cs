@@ -71,6 +71,10 @@ public class AIEnemyMelee : MonoBehaviour, IDamage
 
     bool CanSeePlayer()
     {
+        if (GameManager.instance.player.GetComponent<PlayerController>().IsInvisible())
+        {
+            return false;
+        }
         //Set default output for function
         bool output = false;
 
