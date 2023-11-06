@@ -43,17 +43,16 @@ public class GameManager : MonoBehaviour
     //Only uncomment code once implemented
     void Awake()
     {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
+        instance = this;
+        timeScaleOrig = Time.timeScale;
+        player = GameObject.FindWithTag("Player");
+        playerScript = player.GetComponent<PlayerController>();
+        //enemySpawn = GameObject.FindWithTag("Enemy Spawn");
+    }
 
-            //instance = this;
-            timeScaleOrig = Time.timeScale;
-            player = GameObject.FindWithTag("Player");
-            playerScript = player.GetComponent<PlayerController>();
-            playerSpawn = GameObject.FindWithTag("Respawn");
-            //enemySpawn = GameObject.FindWithTag("Enemy Spawn");
-        
-        
+    private void Start()
+    {
+        playerSpawn = GameObject.FindWithTag("Respawn");
     }
 
 

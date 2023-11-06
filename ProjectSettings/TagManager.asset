@@ -12,9 +12,8 @@ TagManager:
   - Fire Staff
   - Lightning Staff
   - Treasure
-  - NecroTransition
-  - CombatTransition
-  - MainMazeTransition
+  - Stealth
+  - WaterRoom
   layers:
   - Default
   - TransparentFX

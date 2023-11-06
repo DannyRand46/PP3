@@ -17,6 +17,7 @@ public class RecursiveDepthFirstSearch : Maze
 
     //Goal reference for placing
     [SerializeField] GameObject goal;
+    [SerializeField] GameObject start;
     [SerializeField] GameObject devCheat;
 
     //Enemy references for spawning
@@ -117,6 +118,10 @@ public class RecursiveDepthFirstSearch : Maze
 
     public void SpawnObjects()
     {
+        //Set spawn at first run
+        Instantiate(start, new Vector3(5, 2, 5), Quaternion.identity);
+        items.Add(new TileItem(true, new MapLocation(0, 0), start));
+
         //Randomize goal position on north or east edge of map
         if (!goalSpawned && Random.Range(0, 99) < 50)
         {
@@ -308,7 +313,16 @@ public class RecursiveDepthFirstSearch : Maze
             }
             else
             {
-                int index = Random.Range(0, 2);
+                int crawlChance = Random.Range(0, 100);
+                int index;
+                if(crawlChance < 10)
+                {
+                    index = 1;
+                }
+                else
+                {
+                    index = 0;
+                }
 
                 //Right direction
                 if (dir[i].name == "Right")
@@ -342,9 +356,6 @@ public class RecursiveDepthFirstSearch : Maze
         }
         //Create map tile based off of node structure
         SetTile(curr);
-
-        //Randomize if weapon in this tile
-
     }
 
     //Takes in coordinates and sets walls for that tile
@@ -444,9 +455,18 @@ public class RecursiveDepthFirstSearch : Maze
                 visited[index].hasEnemyorWeap = true;
                 //Add item to list
                 MazeState.instance.items1.Add(new TileItem(true, new MapLocation(tileX, tileZ), item));
-                //items.Add(new TileItem(true, new MapLocation(tileX, tileZ), item));
                 break;
             }
         }while (visited[index].hasEnemyorWeap);
+    }
+
+    public static void ChangeSpawn(MapLocation loc)
+    {
+        if(MazeState.instance.items1 != null)
+        {
+            TileItem temp = MazeState.instance.items1[0];
+            temp.tile = loc;
+            MazeState.instance.items1[0] = temp;
+        }
     }
 }

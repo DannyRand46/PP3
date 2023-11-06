@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StealthSceneTrans : MonoBehaviour
+public class ChallengeRoomTrans : MonoBehaviour
 {
     [SerializeField] GameObject interact;
 
@@ -21,27 +21,27 @@ public class StealthSceneTrans : MonoBehaviour
     {
         if (playerInRange && Input.GetButtonDown("Interact"))
         {
-            for(int i = 0; i < MazeState.instance.items1.Count; i++)
+            for (int i = 0; i < MazeState.instance.items1.Count; i++)
             {
-                if (MazeState.instance.items1[i].item.CompareTag("Stealth"))
+                if (MazeState.instance.items1[i].item.CompareTag("WaterRoom"))
                 {
                     RecursiveDepthFirstSearch.ChangeSpawn(MazeState.instance.items1[i].tile);
                     break;
                 }
             }
-            
-            SceneManager.LoadScene("Stealth");
+
+            SceneManager.LoadScene("Kevin's Scene");
         }
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.isTrigger)
+        if (other.isTrigger)
         {
             return;
         }
 
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             playerInRange = true;
             interact.SetActive(true);

@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 1653064986366378708}
   slideDuration: 0.7
-  slideHeight: 0.5
+  slideHeight: 0.3
   cameraTransform: {fileID: 6917442629206589166}
   cameraLoweredPositionY: 0.5
 --- !u!114 &4507245725056965020

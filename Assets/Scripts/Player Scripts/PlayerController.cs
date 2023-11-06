@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour, IDamage
         //if its not paused do this 
         if (!GameManager.instance.isPaused)
         {
-            CheatsyDoodle();
+            //CheatsyDoodle();
             
             movement();
             Sprint();
@@ -108,8 +108,8 @@ public class PlayerController : MonoBehaviour, IDamage
                 invisibleCooldown -= Time.deltaTime;
             }
         }
-        
     }
+
     //  controls the players movement 
     void movement()
     {
