@@ -120,7 +120,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterRising: {fileID: 0}
-  platformOn: {fileID: 0}
+  platforms:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  exitDoor: {fileID: 0}
 --- !u!1001 &2952397280868131376
 PrefabInstance:
   m_ObjectHideFlags: 0

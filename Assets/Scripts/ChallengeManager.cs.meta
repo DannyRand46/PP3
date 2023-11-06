@@ -3,7 +3,10 @@ guid: c448b01b50cae8648b0466fda6f487fb
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - player: {fileID: 34362289372371928, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
+  - waterObject: {fileID: 8972135208620382848, guid: 7f78ccb97db990846a6fb78fe312e7a2, type: 3}
+  - loseBarrier: {fileID: 4339758438022257080, guid: 50a752b3107b5424b9e35a379f1000b7, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
