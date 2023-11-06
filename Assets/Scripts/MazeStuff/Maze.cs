@@ -107,8 +107,8 @@ public class Maze : MonoBehaviour
     ...................................................................
     */
 
-    public int width = 30;// x width
-    public int depth = 30;// z length 
+    public int width;// x width
+    public int depth;// z length 
     public byte[,] map;  // postion of wall or passageway 
     public int scale = 6;
 

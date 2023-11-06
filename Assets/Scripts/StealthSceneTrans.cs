@@ -1,6 +1,6 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Build.Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,6 +21,15 @@ public class StealthSceneTrans : MonoBehaviour
     {
         if (playerInRange && Input.GetButtonDown("Interact"))
         {
+            for(int i = 0; i < MazeState.instance.items1.Count; i++)
+            {
+                if (MazeState.instance.items1[i].item.CompareTag("Stealth"))
+                {
+                    RecursiveDepthFirstSearch.ChangeSpawn(MazeState.instance.items1[i].tile);
+                    break;
+                }
+            }
+            
             SceneManager.LoadScene("Stealth");
         }
     }

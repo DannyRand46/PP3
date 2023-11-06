@@ -10,7 +10,10 @@ public class StealthTansSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maze.GetComponent<RecursiveDepthFirstSearch>().SetItem(stealth);
+        if(GameObject.FindWithTag("Stealth") == null)
+        {
+            maze.GetComponent<RecursiveDepthFirstSearch>().SetItem(stealth);
+        }
     }
 
     // Update is called once per frame

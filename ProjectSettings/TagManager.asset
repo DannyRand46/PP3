@@ -12,6 +12,7 @@ TagManager:
   - Fire Staff
   - Lightning Staff
   - Treasure
+  - Stealth
   layers:
   - Default
   - TransparentFX

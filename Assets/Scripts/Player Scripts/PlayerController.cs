@@ -64,13 +64,13 @@ public class PlayerController : MonoBehaviour, IDamage
         //if its not paused do this 
         if (!GameManager.instance.isPaused)
         {
-            CheatsyDoodle();
+            //CheatsyDoodle();
             
             movement();
             Sprint();
         }
-        
     }
+
     //  controls the players movement 
     void movement()
     {

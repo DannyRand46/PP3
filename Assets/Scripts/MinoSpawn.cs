@@ -12,6 +12,8 @@ public class MinoSpawn : MonoBehaviour
     {
         if (Input.GetButtonDown("Interact") && playerInTrigger)
         {
+            int index = MazeState.instance.FindItem(gameObject);
+            MazeState.instance.DisableItem(index);
             SpawnMino();
         }
         transform.Rotate(new Vector3(30, 25, 50) * Time.deltaTime);

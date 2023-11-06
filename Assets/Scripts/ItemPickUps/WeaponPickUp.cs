@@ -45,8 +45,14 @@ public class WeaponPickUp : MonoBehaviour
         GameManager.instance.player.GetComponent<PlayerWeapons>().SetWeaponStats(weapon);
 
         //Set weapon to no longer respawn when scene is reloaded
-        int index = MazeState.instance.FindItem(gameObject);
-        MazeState.instance.DisableItem(index);
+        for (int i = 0; i < MazeState.instance.items1.Count; i++)
+        {
+            if (MazeState.instance.items1[i].item.CompareTag(gameObject.tag))
+            {
+                MazeState.instance.DisableItem(i);
+                break;
+            }
+        }
 
         Destroy(gameObject);
     }
