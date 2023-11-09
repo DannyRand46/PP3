@@ -191,6 +191,12 @@ MonoBehaviour:
   tracker: {fileID: 8938392235454683108, guid: ddfaf94e20119294888bc8e77c410ccf, type: 3}
   objs:
   - {fileID: 8142345698396238460, guid: 0bc84997153d64849812823dc55d5c12, type: 3}
+  - {fileID: 5833066701678820672, guid: 886cbdfac9ce3f24ca16183ac6ab5243, type: 3}
+  - {fileID: 2955572133694076428, guid: c936272199cfa89458994de00df2e41a, type: 3}
+  objIms:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!33 &3607773146104892616
 MeshFilter:
   m_ObjectHideFlags: 0

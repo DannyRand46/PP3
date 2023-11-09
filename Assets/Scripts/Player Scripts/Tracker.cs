@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 
 public class Tracker : MonoBehaviour
 {
     [Header("----- Components -----")]
     [SerializeField] GameObject tracker;
     [SerializeField] List<GameObject> objs = new List<GameObject>();
+    [SerializeField] List<Image> objIms = new List<Image>();
 
     int index;
 
@@ -31,8 +35,17 @@ public class Tracker : MonoBehaviour
 
         if(Input.GetButtonDown("Tab"))
         {
-            //Open item selection menu
-
+            //Cycle through trackable items
+            objIms[index].gameObject.SetActive(false);
+            if(index == 2)
+            {
+                index = 0;
+            }
+            else
+            {
+                index++;
+            }
+            objIms[index].gameObject.SetActive(true);
         }
     }
 
