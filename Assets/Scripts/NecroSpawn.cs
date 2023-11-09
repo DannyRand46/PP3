@@ -5,14 +5,14 @@ using UnityEngine;
 public class NecroSpawn : MonoBehaviour
 {
     [SerializeField] GameObject maze;
-    [SerializeField] GameObject stealth;
+    [SerializeField] GameObject miniBoss;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (GameObject.FindWithTag("Stealth") == null)
+        if (GameObject.FindWithTag("NecroTransition") == null)
         {
-            maze.GetComponent<RecursiveDepthFirstSearch>().SetItem(stealth);
+            maze.GetComponent<RecursiveDepthFirstSearch>().SetItem(miniBoss);
         }
     }
 
