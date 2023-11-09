@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7166801396116980800}
   - component: {fileID: 2068089707752569165}
   - component: {fileID: 4507245725056965020}
+  - component: {fileID: 12497278735318648}
   - component: {fileID: 3607773146104892616}
   - component: {fileID: 2339815084857857471}
   - component: {fileID: 302178282234110217}
@@ -175,6 +176,21 @@ MonoBehaviour:
   controller: {fileID: 1653064986366378708}
   dashDuration: 0.3
   dashSpeed: 30
+--- !u!114 &12497278735318648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34362289372371928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a9925ca06cd9b4eb2fab6a17e74e80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tracker: {fileID: 8938392235454683108, guid: ddfaf94e20119294888bc8e77c410ccf, type: 3}
+  objs:
+  - {fileID: 8142345698396238460, guid: 0bc84997153d64849812823dc55d5c12, type: 3}
 --- !u!33 &3607773146104892616
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -190,7 +206,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 34362289372371928}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
