@@ -127,7 +127,7 @@ public class PowerUpManager : MonoBehaviour
                 availablePowerUps.Add(type);
             }
 
-            //UpdatePowerUpUI();
+            UpdatePowerUpUI();
         }
     }
 
