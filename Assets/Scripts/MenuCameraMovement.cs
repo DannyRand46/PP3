@@ -10,6 +10,7 @@ public class DynamicCamera : MonoBehaviour
         POS_CREDITS,
         POS_SETTINGS,
         POS_CONTROLS,
+        POS_MINOTAUR,
 
         STILL,
     }
@@ -68,6 +69,14 @@ public class DynamicCamera : MonoBehaviour
         }
     }
     void SetTargetControls()
+    {
+        if (targetPosition == TargetPosition.STILL)
+        {
+            targetPosition = TargetPosition.POS_CONTROLS;
+            cameraLerpRatio = 0;
+        }
+    }
+    void SetTargetMinotaur()
     {
         if (targetPosition == TargetPosition.STILL)
         {
