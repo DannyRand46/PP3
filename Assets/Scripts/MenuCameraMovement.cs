@@ -33,7 +33,7 @@ public class DynamicCamera : MonoBehaviour
         if (targetPosition != TargetPosition.STILL)
         {
             //dictates transition time
-            cameraLerpRatio += Time.deltaTime;
+            cameraLerpRatio += (Time.deltaTime/3);
             transform.position = new Vector3(Mathf.Lerp(lastCameraPosition.x, positions[(int)targetPosition].transform.position.x, ParametricGrowthCurve(cameraLerpRatio)),
                 Mathf.Lerp(lastCameraPosition.y, positions[(int)targetPosition].transform.position.y, ParametricGrowthCurve(cameraLerpRatio)),
                 Mathf.Lerp(lastCameraPosition.z, positions[(int)targetPosition].transform.position.z, ParametricGrowthCurve(cameraLerpRatio)));
@@ -44,42 +44,47 @@ public class DynamicCamera : MonoBehaviour
         }
     }
 
-    void SetTargetMainMenu()
+    public void SetTargetMainMenu()
     {
         if (targetPosition == TargetPosition.STILL)
         {
+            lastCameraPosition = transform.position;
             targetPosition = TargetPosition.POS_MAIN_MENU;
             cameraLerpRatio = 0;
         }
     }
-    void SetTargetCredits()
+    public void SetTargetCredits()
     {
         if (targetPosition == TargetPosition.STILL)
         {
+            lastCameraPosition = transform.position;
             targetPosition = TargetPosition.POS_CREDITS;
             cameraLerpRatio = 0;
         }
     }
-    void SetTargetSettings()
+    public void SetTargetSettings()
     {
         if (targetPosition == TargetPosition.STILL)
         {
+            lastCameraPosition = transform.position;
             targetPosition = TargetPosition.POS_SETTINGS;
             cameraLerpRatio = 0;
         }
     }
-    void SetTargetControls()
+    public void SetTargetControls()
     {
         if (targetPosition == TargetPosition.STILL)
         {
+            lastCameraPosition = transform.position;
             targetPosition = TargetPosition.POS_CONTROLS;
             cameraLerpRatio = 0;
         }
     }
-    void SetTargetMinotaur()
+    public void SetTargetMinotaur()
     {
         if (targetPosition == TargetPosition.STILL)
         {
+            lastCameraPosition = transform.position;
             targetPosition = TargetPosition.POS_CONTROLS;
             cameraLerpRatio = 0;
         }
@@ -88,7 +93,6 @@ public class DynamicCamera : MonoBehaviour
     //Ease in / Ease out animation curve
     float ParametricGrowthCurve(float t)
     {
-        t /= 2;
         float sqt = t * t;
         return sqt / (2.0f * (sqt - t) + 1.0f);
     }
