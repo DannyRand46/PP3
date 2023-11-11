@@ -57,8 +57,6 @@ public class AudioSettings : MonoBehaviour
 
     public void LoadAudioPrefs()
     {
-        Debug.Log("Loading SFX: " + ((float)PlayerSettings.instance.GetSXFVolume() / 100.0f));
-        Debug.Log("Loading Music: " + ((float)PlayerSettings.instance.GetMusicVolume() / 100.0f));
         SFXVolume = ((float)PlayerSettings.instance.GetSXFVolume() / 100.0f );
         MusicVolume = ((float)PlayerSettings.instance.GetMusicVolume() / 100.0f);
         isMuted = PlayerSettings.instance.GetIsMuted();

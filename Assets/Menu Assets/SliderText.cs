@@ -16,6 +16,13 @@ public class SliderText : MonoBehaviour
     public void SetSliderText(float sliderValue)
     {
         int v = (int)(sliderValue * 100);
-        mText.text = v.ToString();
+        if (mText == null)
+        {
+            mText = GetComponent<TextMeshProUGUI>();
+        }
+        if (mText != null)
+        {
+            mText.text = v.ToString();
+        }
     }
 }
