@@ -568,6 +568,7 @@ MonoBehaviour:
   viewAngle: 60
   roamDist: 15
   roamTime: 3
+  drachma: 7
   weapon: {fileID: 4190653085988065459, guid: 83294bf5a0456b543a5051690590242e, type: 3}
   weaponPos: {fileID: 7821319973259146372}
   attackDelay: 3

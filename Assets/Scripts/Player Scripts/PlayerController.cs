@@ -281,7 +281,7 @@ public class PlayerController : MonoBehaviour, IDamage
 
     public void AddHealth(float amount)
     {
-        Hp +=(HPOrig * amount);
+        Hp += amount;
         if (Hp >= HPOrig)
         {
             Hp = HPOrig;
