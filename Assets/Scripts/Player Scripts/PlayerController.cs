@@ -245,6 +245,7 @@ public class PlayerController : MonoBehaviour, IDamage
             playerSpeed *= sprintMod;
         }
     }
+
     void UpdatePlayerUi()
     {
         if (GameManager.instance.playerStaminaBar.fillAmount == 1.0f)
