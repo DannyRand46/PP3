@@ -16,6 +16,9 @@ TagManager:
   - WaterRoom
   - NecroTransition
   - CombatTransition
+  - MainMazeTransition
+  - Music
+  - SFX
   layers:
   - Default
   - TransparentFX

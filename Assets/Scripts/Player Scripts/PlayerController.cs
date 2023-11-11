@@ -67,6 +67,9 @@ public class PlayerController : MonoBehaviour, IDamage
     private Coroutine invisibilityCoroutine;
     private Coroutine shieldCoroutine;
 
+    //wallrun
+    public bool wallruning;
+
     private void Start()
     {
         
@@ -113,7 +116,7 @@ public class PlayerController : MonoBehaviour, IDamage
     //  controls the players movement 
     void movement()
     {
-        //Additnail movemtn called here 
+        //Addational movement called here 
         Sprint();
 
         //WallRun();
@@ -245,6 +248,7 @@ public class PlayerController : MonoBehaviour, IDamage
             playerSpeed *= sprintMod;
         }
     }
+
     void UpdatePlayerUi()
     {
         if (GameManager.instance.playerStaminaBar.fillAmount == 1.0f)
@@ -280,7 +284,7 @@ public class PlayerController : MonoBehaviour, IDamage
 
     public void AddHealth(float amount)
     {
-        Hp +=(HPOrig * amount);
+        Hp += amount;
         if (Hp >= HPOrig)
         {
             Hp = HPOrig;

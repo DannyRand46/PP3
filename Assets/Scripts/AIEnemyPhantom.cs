@@ -16,6 +16,7 @@ public class AIEnemyPhantom : MonoBehaviour, IDamage
     [SerializeField] float turnSpeed;
     [Range(1, 180)][SerializeField] int viewAngle;
     [SerializeField] float stoppingDist;
+    [SerializeField] int drachma;
 
     bool playerInRange;
     float angleToPlayer;
@@ -87,6 +88,8 @@ public class AIEnemyPhantom : MonoBehaviour, IDamage
 
         if (HP <= 0)
         {
+            //Gives player money
+            Currency.instance.GainDrachma(drachma);
             //Set time for future death animations
             Destroy(gameObject, deathAnimTime);
         }
