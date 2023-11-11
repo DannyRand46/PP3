@@ -6,9 +6,9 @@ public class PlayerSettings : MonoBehaviour
 {
     public static PlayerSettings instance;
 
-    string SFXVolumeKey;
-    string MusicVolumeKey;
-    string MutedKey;
+    string SFXVolumeKey = "SFX";
+    string MusicVolumeKey = "Music";
+    string MutedKey = "Muted";
 
     void Awake()
     {
