@@ -10,6 +10,11 @@ public class PowerUpManager : MonoBehaviour
 
     private List<PowerUpType> availablePowerUps = new List<PowerUpType>();
     private int currentPowerUpIndex = 0;
+    [Range(1,100)][SerializeField] int manaCostSheild;
+    [Range(1,100)][SerializeField] int manaCostDamageReduction;
+    [Range(1,100)][SerializeField] int manaCostSpeedBoost;
+    [Range(1,100)][SerializeField] int manaCostRaiseHp;
+    [Range(1,100)][SerializeField] int manaCostInvisibility;
 
     private PowerUpDisplayManager powerUpDisplayManager;
 
@@ -68,26 +73,47 @@ public class PowerUpManager : MonoBehaviour
                     if (playerController.shielded)
                         playerController.ShieldOff();
                     else
-                        playerController.ShieldOn();
+                    {
+
+                        if (playerController.ConsumeMana(manaCostSheild))
+                        {
+                            playerController.ShieldOn(); 
+                        }
+                    }
                     break;
 
                 case PowerUpType.SpeedBoost:
                     if (playerController.speedBoosted)
                         playerController.SpeedBoostOff();
                     else
-                        playerController.SpeedBoostOn();
+                    {
+                        if (playerController.ConsumeMana(manaCostSpeedBoost))
+                        {
+                            playerController.SpeedBoostOn(); 
+                        }
+                    }
                     break;
 
                 case PowerUpType.RaiseHP:
                     if (playerController.healthBoosted)
                         playerController.HealthBoostOff();
                     else
-                        playerController.HealthBoostOn();
+                    {
+                        if (playerController.ConsumeMana(manaCostRaiseHp))
+                        {
+                            playerController.HealthBoostOn(); 
+                        }
+                    }
                     break;
 
                 case PowerUpType.Invisibility:
                     if (!playerController.IsInvisible())
-                        playerController.InvisibilityActive();
+                    {
+                        if (playerController.ConsumeMana(manaCostInvisibility))
+                        {
+                            playerController.InvisibilityActive(); 
+                        }
+                    }
                     else
                         playerController.InvisibilityOff();
                     break;

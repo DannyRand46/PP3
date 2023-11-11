@@ -11,7 +11,7 @@ public class Tracker : MonoBehaviour
     [SerializeField] GameObject tracker;
     [SerializeField] List<GameObject> objs = new List<GameObject>();
     [SerializeField] List<Image> objIms = new List<Image>();
-
+    [SerializeField] public int manaCost;
     int index;
 
     // Start is called before the first frame update
@@ -25,11 +25,15 @@ public class Tracker : MonoBehaviour
     {
         if(Input.GetButtonDown("Trace"))
         {
-            //If object exists in scene, track to it
-            GameObject obj = GameObject.FindWithTag(objs[index].tag);
-            if(obj != null)
+
+            if (GameManager.instance.playerScript.ConsumeMana(manaCost))
             {
-                Instantiate(tracker, gameObject.transform.position, Quaternion.identity);
+                //If object exists in scene, track to it
+                GameObject obj = GameObject.FindWithTag(objs[index].tag);
+                if (obj != null)
+                {
+                    Instantiate(tracker, gameObject.transform.position, Quaternion.identity);
+                } 
             }
         }
 

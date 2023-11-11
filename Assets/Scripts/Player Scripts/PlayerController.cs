@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour, IDamage
 
     [Header("----Player Stats----")]
     [Range(1, 50)][SerializeField] float Hp;
+    [Range(1, 500)][SerializeField] float Mana;
     [Range(1, 20)][SerializeField] private float playerSpeed;
     [Range(1, 3)][SerializeField] private float sprintMod;
     [Range(1, 3)][SerializeField] int jumpMax;
@@ -44,7 +45,7 @@ public class PlayerController : MonoBehaviour, IDamage
     [SerializeField] public float speedBoostEffect = 0.25f;
     [SerializeField] public bool healthBoosted = false;
     [SerializeField] public float healthBoostEffect = 0.2f;
-    [SerializeField] bool isInvisible = false;
+    [SerializeField] public bool isInvisible = false;
     [SerializeField] float timeInvisible = 30f;
     [SerializeField] float invisibleCooldown = 30f;
     [SerializeField] float invisibleCooldownTimer = 0f;
@@ -56,6 +57,7 @@ public class PlayerController : MonoBehaviour, IDamage
     private int jumpedtimes;
     bool isSprinting;
     float HPOrig;
+    float ManaOrig;
     int Layer_Mask;
     bool Crouching;
     bool footstepsPlaying;
@@ -67,11 +69,15 @@ public class PlayerController : MonoBehaviour, IDamage
     private Coroutine invisibilityCoroutine;
     private Coroutine shieldCoroutine;
 
+    //wallrun
+    public bool wallruning;
+
     private void Start()
     {
         
         Layer_Mask = LayerMask.GetMask("Wall") + LayerMask.GetMask("Ground");
         HPOrig = Hp;
+        ManaOrig = Mana;
         spawnPlayer();
         playerDash = GetComponent<PlayerDash>();
     }
@@ -79,7 +85,6 @@ public class PlayerController : MonoBehaviour, IDamage
 
     void Update()
     {
-
         //if its not paused do this 
         if (!GameManager.instance.isPaused)
         {
@@ -113,7 +118,7 @@ public class PlayerController : MonoBehaviour, IDamage
     //  controls the players movement 
     void movement()
     {
-        //Additnail movemtn called here 
+        //Addational movement called here 
         Sprint();
 
         //WallRun();
@@ -258,6 +263,7 @@ public class PlayerController : MonoBehaviour, IDamage
         }
 
         GameManager.instance.playerHPBar.fillAmount = (float)Hp / (float)HPOrig;
+        GameManager.instance.playerManaBar.fillAmount = (float)Mana / (float)ManaOrig;
     }
 
     public void TakeDamage(int amount)
@@ -279,6 +285,21 @@ public class PlayerController : MonoBehaviour, IDamage
         }
     }
 
+    public bool ConsumeMana(int amount)
+    {
+
+        if (amount <= Mana)
+        {
+            Mana -= amount;
+            UpdatePlayerUi(); 
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public void AddHealth(float amount)
     {
         Hp += amount;
@@ -288,9 +309,18 @@ public class PlayerController : MonoBehaviour, IDamage
         }
     }
 
+    public void AddMana(float amount)
+    {
+        Mana += amount;
+        if (Mana >= ManaOrig)
+        {
+            Mana = ManaOrig;
+        }
+    }
     public void spawnPlayer()
     {
         Hp = HPOrig;
+        Mana = ManaOrig;
         UpdatePlayerUi();
         controller.enabled = false;
         transform.position = GameManager.instance.playerSpawn.transform.position;
