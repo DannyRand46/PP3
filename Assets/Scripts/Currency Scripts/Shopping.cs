@@ -33,6 +33,7 @@ public class Shopping : MonoBehaviour
         {
             shopCanv.SetActive(true);
             activeMenu = shopMenu;
+            origText = activeMenu.GetComponentInChildren<TMP_Text>().text;
             activeMenu.SetActive(true);
             GameManager.instance.pausedState();
         }

@@ -20,9 +20,12 @@ public class Trace : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(agent.isActiveAndEnabled)
+        if (gameObject != null)
         {
-            agent.SetDestination(target.transform.position);
+            if (agent.isActiveAndEnabled && target != null)
+            {
+                agent.SetDestination(target.transform.position);
+            }
         }
     }
 }
