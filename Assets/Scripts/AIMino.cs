@@ -42,7 +42,11 @@ public class AIMino : MonoBehaviour, IDamage
     [Range(1, 30)][SerializeField] float chargeAttackCooldown;
     [Range(1, 30)][SerializeField] float summonCooldown;
 
-    RaycastHit destuctibleWallCheck;
+    RaycastHit destructibleWallCheck;
+    RaycastHit feetCheck;
+    bool feetHit;
+    bool headHit;
+
     float currSpeed;
     float minoMaxHealth;
     float scalar;
@@ -76,24 +80,9 @@ public class AIMino : MonoBehaviour, IDamage
     // Update is called once per frame
     void Update()
     {
-        Vector3 origin = transform.position;
-        origin.y += 6;
-
-        if (Physics.Raycast(origin, transform.forward, out destuctibleWallCheck))
+        if(CheckDestructibleWall())
         {
-            if (destuctibleWallCheck.distance <= range)
-            {
-                DestructibleWalls wallToCheck = destuctibleWallCheck.transform.gameObject.GetComponent<DestructibleWalls>();
-                if (wallToCheck != null)
-                {
-                    // dot product can be used for 90 degree breaks,
-                    wallToCheck.BreakWall(transform.forward);
-                    agent.SetDestination(transform.position);
-                    anim.SetInteger("In Attack Range", 1);
-                    agent.speed = 0;
-                    return;
-                }
-            }
+            return;
         }
 
 
@@ -146,6 +135,54 @@ public class AIMino : MonoBehaviour, IDamage
             SummonAllies();
         }
     }
+
+    bool CheckDestructibleWall()
+    {
+        Vector3 feetPos = transform.position;
+        feetPos.y = 1;
+        Vector3 headPos = transform.position;
+        headPos.y = 8;
+
+        feetHit = Physics.Raycast(feetPos, transform.forward, out destructibleWallCheck);
+        headHit = Physics.Raycast(headPos, transform.forward, out feetCheck);
+
+        if (headHit && feetHit)
+        {
+            // if they're not the same object being hit
+            if (destructibleWallCheck.colliderInstanceID != feetCheck.colliderInstanceID)
+            {
+                if (destructibleWallCheck.distance <= range)
+                {
+                    DestructibleWalls wallToCheck = destructibleWallCheck.transform.gameObject.GetComponent<DestructibleWalls>();
+                    if (wallToCheck != null)
+                    {
+                        // top is a destructible
+                        wallToCheck.BreakWall(transform.forward);
+                        anim.SetInteger("In Attack Range", 1);
+                        agent.speed = 0;
+                        return true;
+                    }
+                }
+            }
+        }
+        else if (headHit && !feetHit)
+        {
+            if (destructibleWallCheck.distance <= range)
+            {
+                DestructibleWalls wallToCheck = destructibleWallCheck.transform.gameObject.GetComponent<DestructibleWalls>();
+                if (wallToCheck != null)
+                {
+                    // dot product can be used for 90 degree breaks,
+                    wallToCheck.BreakWall(transform.forward);
+                    anim.SetInteger("In Attack Range", 1);
+                    agent.speed = 0;
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     void Movement()
     {
         if (agent.speed > 0 && !footstepsPlaying)
