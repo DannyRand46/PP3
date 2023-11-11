@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Shopping : MonoBehaviour
@@ -17,6 +18,7 @@ public class Shopping : MonoBehaviour
 
     bool playerInRange;
     GameObject activeMenu;
+    string origText;
 
     // Start is called before the first frame update
     void Start()
@@ -97,7 +99,9 @@ public class Shopping : MonoBehaviour
     public void MenuChange(GameObject menu)
     {
         activeMenu.SetActive(false);
+        activeMenu.GetComponentInChildren<TMP_Text>().text = origText;
         activeMenu = menu;
+        origText = activeMenu.GetComponentInChildren<TMP_Text>().text;
         activeMenu.SetActive(true);
     }
 

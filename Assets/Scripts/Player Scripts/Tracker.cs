@@ -37,7 +37,7 @@ public class Tracker : MonoBehaviour
         {
             //Cycle through trackable items
             objIms[index].gameObject.SetActive(false);
-            if(index == 2)
+            if(index == objIms.Count - 1)
             {
                 index = 0;
             }

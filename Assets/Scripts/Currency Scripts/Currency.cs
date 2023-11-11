@@ -10,6 +10,7 @@ public class Currency : MonoBehaviour
 
     [SerializeField] GameObject currDisplay;
     [SerializeField] TMP_Text currText;
+    public bool activeDis;
 
     int drachma;
 
@@ -28,6 +29,7 @@ public class Currency : MonoBehaviour
         }
 
         drachma = 0;
+        activeDis = false;
 
         //Keeps this object as instanced for tracking info between scenes
         DontDestroyOnLoad(gameObject);
@@ -38,13 +40,14 @@ public class Currency : MonoBehaviour
     {
         drachma += amount;
         currText.text = drachma.ToString("F0");
-        if(currDisplay != null && !currDisplay.activeSelf)
+        if(currDisplay != null && !activeDis)
         {
             currDisplay.SetActive(true);
+            activeDis = true;
         }
     }
 
-    //Spends amount of drachma given (must be error checked before this function
+    //Spends amount of drachma given (must be error checked before this function is called)
     public void SpendDrachma(int amount)
     {
         drachma -= amount;
