@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour, IDamage
     [SerializeField] public float speedBoostEffect = 0.25f;
     [SerializeField] public bool healthBoosted = false;
     [SerializeField] public float healthBoostEffect = 0.2f;
-    [SerializeField] bool isInvisible = false;
+    [SerializeField] public bool isInvisible = false;
     [SerializeField] float timeInvisible = 30f;
     [SerializeField] float invisibleCooldown = 30f;
     [SerializeField] float invisibleCooldownTimer = 0f;

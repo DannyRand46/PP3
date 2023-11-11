@@ -23,7 +23,8 @@ public class AIMino : MonoBehaviour, IDamage
     [Range(1, 100)][SerializeField] float timeSpentCharging;
     [SerializeField] List<GameObject> enemySpawners;
     [SerializeField] GameObject enemyPrefab;
-    
+    [SerializeField] List<AudioSource> footsteps;
+    [SerializeField] AudioSource weaponSwing;
 
 
     [Header("----- Stats -----")]
@@ -51,6 +52,7 @@ public class AIMino : MonoBehaviour, IDamage
     bool isChargeAttacking;
     float chargeAttackCooldownTracker;
     float summonCooldownTracker;
+    bool footstepsPlaying;
 
     float angleToPlayer;
     Vector3 playerDir;
@@ -146,8 +148,11 @@ public class AIMino : MonoBehaviour, IDamage
     }
     void Movement()
     {
-        
-        if(isChargeAttacking)
+        if (agent.speed > 0 && !footstepsPlaying)
+        {
+            StartCoroutine(PlayFootSteps());
+        }
+        if (isChargeAttacking)
         {
             timeSpentCharging -= Time.deltaTime;
             if (timeSpentCharging <= 0)
@@ -157,6 +162,7 @@ public class AIMino : MonoBehaviour, IDamage
             }
             Debug.Log("AHAHAHAHAHAHA RUSHING IN!!!");
             agent.SetDestination(chargedestination);
+
             RaycastHit hit;
             Debug.DrawLine(hitBox.transform.position, transform.forward);
             if (Physics.Raycast(hitBox.transform.position, transform.forward, out hit))
@@ -188,7 +194,7 @@ public class AIMino : MonoBehaviour, IDamage
         agent.SetDestination(GameManager.instance.player.transform.position);
 
         //Call for attack if player is within view angle
-        if (angleToPlayer <= viewAngle)
+        if (angleToPlayer <= viewAngle && GameManager.instance.playerScript.isInvisible == false)
         {
             InAttackRange();
         }
@@ -263,6 +269,7 @@ public class AIMino : MonoBehaviour, IDamage
     void AttackStart()
     {
         //Turns collider on for weapon
+        weaponSwing.Play();
         weapon.GetComponent<Collider>().enabled = true;
         currSpeed = agent.speed;
         agent.speed = 0;
@@ -399,6 +406,20 @@ public class AIMino : MonoBehaviour, IDamage
             summonCooldownTracker = summonCooldown;
         }
         agent.speed = stageTwoSpeed;
+    }
+    IEnumerator PlayFootSteps()
+    {
+        footstepsPlaying = true;
+        int ndx = Random.Range(0, footsteps.Count);
+        footsteps[ndx].Play();
+
+        if (!isChargeAttacking)
+        {
+            yield return new WaitForSeconds(0.5f);
+        }
+        else
+            yield return new WaitForSeconds(0.3f);
+        footstepsPlaying = false;
     }
 
     float ParametricGrowthCurve(float t)
