@@ -19,6 +19,9 @@ TagManager:
   - MainMazeTransition
   - Music
   - SFX
+  - Golem
+  - GolemTransition
+  - Combat2Transition
   layers:
   - Default
   - TransparentFX
