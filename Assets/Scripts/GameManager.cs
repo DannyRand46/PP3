@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject menuActiveInterface;
     [SerializeField] TextMeshProUGUI ammoCur;
     [SerializeField] TextMeshProUGUI ammoMax;
+    public GameObject consumables;
     [SerializeField] GameObject PlayerDamageFlashScreen;
 
     public bool isPaused;

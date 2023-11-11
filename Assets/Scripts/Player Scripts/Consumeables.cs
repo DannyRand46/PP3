@@ -28,6 +28,8 @@ public class Consumeables : MonoBehaviour
         if (pots > 0)
         {
             GameManager.instance.player.GetComponent<PlayerController>().AddHealth(hpRestore);
+            pots--;
+            potCount.text = pots.ToString("F0");
         }
     }
 }
