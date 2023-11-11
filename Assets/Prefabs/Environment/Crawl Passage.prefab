@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9155601997259821913}
   - component: {fileID: -4547874965383785548}
   - component: {fileID: 5583780710603056117}
+  - component: {fileID: 3334203707768984321}
   m_Layer: 11
   m_Name: Crawl Passage
   m_TagString: Wall
@@ -136,4 +137,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brokenWallPrefab: {fileID: 862624239498569087, guid: 28ed0bb755e9f684abf06dc22be9110d, type: 3}
-  magnitude: 8
+  magnitude: 5
+--- !u!114 &3334203707768984321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3794360953529155817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 0
+  m_Area: 0
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: 00000000

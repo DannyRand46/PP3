@@ -132,6 +132,6 @@ public class PlayerWallRun : MonoBehaviour
 
     private void EndWallRun()
     {
-
+        pc.wallruning = false;
     }
 }

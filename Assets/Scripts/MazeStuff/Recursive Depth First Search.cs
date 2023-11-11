@@ -15,6 +15,7 @@ public class RecursiveDepthFirstSearch : Maze
     //Used to bake navmesh once objects are spawned
     [SerializeField] NavMeshSurface surface;
     [SerializeField] NavMeshSurface trackSurf;
+    [SerializeField] NavMeshSurface minoSurf;
 
     //Goal reference for placing
     [SerializeField] GameObject goal;
@@ -74,6 +75,7 @@ public class RecursiveDepthFirstSearch : Maze
             //Build navmesh so enemies can instantiate without issue
             surface.BuildNavMesh();
             trackSurf.BuildNavMesh();
+            minoSurf.BuildNavMesh();
 
             //Populate maze with enemies and save
             SpawnEnemies();
@@ -91,6 +93,7 @@ public class RecursiveDepthFirstSearch : Maze
             //Build navmesh so enemies can instantiate without issue
             surface.BuildNavMesh(); 
             trackSurf.BuildNavMesh();
+            minoSurf.BuildNavMesh();
 
             //Load enemies from saved state
             for(int i = 0; i < MazeState.instance.enemies1.Count; i++)
