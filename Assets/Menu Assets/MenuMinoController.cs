@@ -10,6 +10,7 @@ public class MenuMinoController : MonoBehaviour
     [SerializeField] GameObject startWall;
     [SerializeField] GameObject brokeWall;
     [SerializeField] Image fade;
+    [SerializeField] AudioSource sfx;
     [SerializeField] float magnitude;
 
     bool isFading;
@@ -34,6 +35,11 @@ public class MenuMinoController : MonoBehaviour
     {
         isFading = true;
         fadeRatio = 0;
+    }
+
+    public void PlayRoarAudio()
+    {
+        sfx.Play();
     }
 
     private void Update()
