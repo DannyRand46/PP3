@@ -18,6 +18,7 @@ public class AIEnemyRanged : MonoBehaviour, IDamage
     [Range(1, 180)][SerializeField] int viewAngle;
     [SerializeField] int roamDist;
     [SerializeField] int roamTime;
+    [SerializeField] int drachma;
 
     [Header("----- Attack Stats -----")]
     //Weapon implementation
@@ -148,6 +149,8 @@ public class AIEnemyRanged : MonoBehaviour, IDamage
         HP -= amount;
         if (HP <= 0)
         {
+            //Gives player money
+            Currency.instance.GainDrachma(drachma);
             anim.SetBool("Dead", true);
             agent.enabled = false;
             hitBox.enabled = false;
