@@ -6,6 +6,7 @@ public class PlayerWeapons : MonoBehaviour
 {
     [Header("----- Components -----")]
     [SerializeField] AudioSource aud;
+    [SerializeField] Transform attPos;
 
     [Header("----Weapon stats----")]
     [SerializeField] List<WeaponStats> weaponlist = new List<WeaponStats>();
@@ -56,19 +57,9 @@ public class PlayerWeapons : MonoBehaviour
             {
                 isShooting = true;
                 aud.PlayOneShot(weaponlist[selectedweapon].shootsound, weaponlist[selectedweapon].shootsoundvol);
-                RaycastHit hit;
 
-                if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out hit, shootDist))
-                {
-                    //Does he object have acess to IDamage
-                    IDamage damagable = hit.collider.GetComponent<IDamage>();
-                    // if that object is damagebel then damge it  
-                    if (damagable != null)
-                    {
-                        damagable.TakeDamage(shootDamage);
-                    }
-                    Instantiate(weaponlist[selectedweapon].hiteffect, hit.point, Quaternion.identity);
-                }
+                weaponlist[selectedweapon].Attack(attPos);
+                
                 weaponlist[selectedweapon].ammmoCur--;
                 GameManager.instance.updateAmmoUI(weaponlist[selectedweapon].ammmoCur, weaponlist[selectedweapon].ammmoMax);
                 // once fired pause 

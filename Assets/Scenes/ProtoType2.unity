@@ -402,6 +402,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currDisplay: {fileID: 13330659}
   currText: {fileID: 2001212661}
+  activeDis: 0
 --- !u!4 &686181379
 Transform:
   m_ObjectHideFlags: 0
@@ -486,6 +487,38 @@ PrefabInstance:
     - target: {fileID: 34362289372371928, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 1524433056192321052, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034216708900791106, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034216708900791106, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034216708900791106, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034216708900791106, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034216708900791106, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2034216708900791106, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2316135792545394986, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5808360451207308426, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
       propertyPath: m_CullingMask.m_Bits

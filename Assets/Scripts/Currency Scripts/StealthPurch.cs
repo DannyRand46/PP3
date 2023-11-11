@@ -45,9 +45,9 @@ public class StealthPurch : MonoBehaviour
 
     public void BuyPot()
     {
-        if(Currency.instance.GetDrachma() >= 10)
+        if(Currency.instance.GetDrachma() >= 5)
         {
-            Currency.instance.SpendDrachma(10);
+            Currency.instance.SpendDrachma(5);
             //Add potion
 
         }
