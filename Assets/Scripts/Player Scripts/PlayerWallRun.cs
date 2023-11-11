@@ -27,6 +27,51 @@ public class PlayerWallRun : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
+        pc = GetComponent<PlayerController>();
+    }
+
+    private void Update()
+    {
+        CheckForWalls();
+    }
+
+    private void CheckForWalls()
+    {
+        wallRight = Physics.Raycast(transform.position, orientation.right, out rightWallHit, wallCheckDistance, whatIsWall);
+        wallLeft = Physics.Raycast(transform.position, -orientation.right, out leftWallHit, wallCheckDistance, whatIsWall);
+    }
+
+    private bool AboveGround()
+    {
+        return !Physics.Raycast(transform.position, Vector3.down, minJumpHeight, whatIsGround);
+    }
+
+    private void StateMachine()
+    {
+        //get inputs
+        horizontalDirection = Input.GetAxisRaw("Horizontal");
+        verticalDirection = Input.GetAxisRaw("Vertical");
+
+        // wallrun Start
+        if ((wallLeft || wallRight) && verticalDirection > 0 && AboveGround())
+        {
+
+        }
+    }
+
+    private void BeginWallRun()
+    {
+
+    }
+
+    private void WallRunningMovement()
+    {
+
+    }
+
+    private void EndWallRun()
+    {
+
     }
 }
