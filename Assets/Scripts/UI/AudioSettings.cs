@@ -65,7 +65,6 @@ public class AudioSettings : MonoBehaviour
     {
         // Set all audio sources in the scene to the volume from Player Prefs;
         AudioSource[] aSources = FindObjectsOfType<AudioSource>();
-        Debug.Log("Found " + aSources.Length.ToString() + " Audio Sources");
         for (int i = 0; i < aSources.Length; i++)
         {
             aSources[i].mute = isMuted;

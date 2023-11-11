@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brokenWallPrefab: {fileID: 862624239498569087, guid: 28ed0bb755e9f684abf06dc22be9110d, type: 3}
-  magnitude: 8
+  magnitude: 5
 --- !u!114 &3334203707768984321
 MonoBehaviour:
   m_ObjectHideFlags: 0
