@@ -365,6 +365,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 1078935156216522166}
   winMenu: {fileID: 8204409206163360935}
   lossMenu: {fileID: 4994723881577732410}
+  menuActiveInterface: {fileID: 8799319628679900653}
   ammoCur: {fileID: 7282763516884187302}
   ammoMax: {fileID: 7495945319073362873}
   PlayerDamageFlashScreen: {fileID: 7262070242981280345}
