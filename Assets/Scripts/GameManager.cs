@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public GameObject player;
     public GameObject playerSpawn;
     public Image playerHPBar;
+    public Image playerManaBar;
     public Image playerStaminaBar;
     public PlayerController playerScript;
     public GameObject devCheat;
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject winMenu;
     [SerializeField] GameObject lossMenu;
+    [SerializeField] GameObject menuActiveInterface;
     [SerializeField] TextMeshProUGUI ammoCur;
     [SerializeField] TextMeshProUGUI ammoMax;
     [SerializeField] GameObject PlayerDamageFlashScreen;
@@ -75,8 +77,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
-        playerHPBar.gameObject.SetActive(false);
-        playerStaminaBar.gameObject.SetActive(false);
+        menuActiveInterface.gameObject.SetActive(false);
     }
 
     //Resumes the game
@@ -92,8 +93,7 @@ public class GameManager : MonoBehaviour
             activeMenu.SetActive(false);
             activeMenu = null;
         }
-        playerHPBar.gameObject.SetActive(true);
-        playerStaminaBar.gameObject.SetActive(true);
+        menuActiveInterface.gameObject.SetActive(true);
     }
 
     public void youLose()

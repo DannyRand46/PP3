@@ -52,7 +52,7 @@ public class PlayerWeapons : MonoBehaviour
         // check if we have ammo in the currently selected gun
         if (weaponlist.Count > 0)
         {
-            if (weaponlist[selectedweapon].ammmoCur > 0)
+            if (GameManager.instance.playerScript.ConsumeMana(weaponlist[selectedweapon].manaCost))
             {
                 isShooting = true;
                 aud.PlayOneShot(weaponlist[selectedweapon].shootsound, weaponlist[selectedweapon].shootsoundvol);
@@ -69,8 +69,6 @@ public class PlayerWeapons : MonoBehaviour
                     }
                     Instantiate(weaponlist[selectedweapon].hiteffect, hit.point, Quaternion.identity);
                 }
-                weaponlist[selectedweapon].ammmoCur--;
-                GameManager.instance.updateAmmoUI(weaponlist[selectedweapon].ammmoCur, weaponlist[selectedweapon].ammmoMax);
                 // once fired pause 
                 yield return new WaitForSeconds(shootRate);
                 //stop shooting 
@@ -85,8 +83,8 @@ public class PlayerWeapons : MonoBehaviour
         {
             reload = true;
 
-            weaponlist[selectedweapon].ammmoCur = weaponlist[selectedweapon].ammmoMax;
-            GameManager.instance.updateAmmoUI(weaponlist[selectedweapon].ammmoCur, weaponlist[selectedweapon].ammmoMax);
+            //weaponlist[selectedweapon].ammmoCur = weaponlist[selectedweapon].ammmoMax;
+            //GameManager.instance.updateAmmoUI(weaponlist[selectedweapon].ammmoCur, weaponlist[selectedweapon].ammmoMax);
             yield return new WaitForSeconds(3F);
             reload = false;
         }
@@ -104,8 +102,6 @@ public class PlayerWeapons : MonoBehaviour
 
         weaponModel.GetComponent<MeshRenderer>().sharedMaterial = weapon.model.GetComponent<MeshRenderer>().sharedMaterial;
         selectedweapon = weaponlist.Count - 1;
-
-        GameManager.instance.updateAmmoUI(weaponlist[selectedweapon].ammmoCur, weaponlist[selectedweapon].ammmoMax);
     }
 
     void selectGun()
@@ -130,8 +126,6 @@ public class PlayerWeapons : MonoBehaviour
         //model
         weaponModel.GetComponent<MeshFilter>().sharedMesh = weaponlist[selectedweapon].model.GetComponent<MeshFilter>().sharedMesh;
         weaponModel.GetComponent<MeshRenderer>().sharedMaterial = weaponlist[selectedweapon].model.GetComponent<MeshRenderer>().sharedMaterial;
-
-        GameManager.instance.updateAmmoUI(weaponlist[selectedweapon].ammmoCur, weaponlist[selectedweapon].ammmoMax);
 
         isShooting = false;
     }

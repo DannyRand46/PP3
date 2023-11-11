@@ -9,8 +9,7 @@ public class WeaponStats : ScriptableObject
     public float shootRate;
     public int shootDamage;
     public int shootDist;
-    public int ammmoCur;
-    public int ammmoMax;
+    public int manaCost;
 
     public GameObject model;
     public ParticleSystem hiteffect;
