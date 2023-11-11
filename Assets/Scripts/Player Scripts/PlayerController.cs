@@ -79,7 +79,6 @@ public class PlayerController : MonoBehaviour, IDamage
 
     void Update()
     {
-
         //if its not paused do this 
         if (!GameManager.instance.isPaused)
         {
