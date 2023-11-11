@@ -56,6 +56,7 @@ MonoBehaviour:
   crawlPass: {fileID: 3794360953529155817, guid: 5bb84601e340d7848ba92afc61dff70a, type: 3}
   surface: {fileID: 6879741212444157228}
   trackSurf: {fileID: 5419566227931294078}
+  minoSurf: {fileID: 3861153179214654405}
   goal: {fileID: 8142345698396238460, guid: 0bc84997153d64849812823dc55d5c12, type: 3}
   start: {fileID: 5747019612820089849, guid: db93b45d6f6dbe64a869ecabbfbd51cc, type: 3}
   devCheat: {fileID: 3409459218997731072, guid: b2414d4f8b5686c4da3c281fa0f2a495, type: 3}
@@ -246,7 +247,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 2125
+    m_Bits: 77
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
