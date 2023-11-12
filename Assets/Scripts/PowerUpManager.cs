@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+[System.Serializable]
 
 public class PowerUpManager : MonoBehaviour
 {
-    private Dictionary<PowerUpType, bool> acquiredPowerUps = new Dictionary<PowerUpType, bool>();
+    public Dictionary<PowerUpType, bool> acquiredPowerUps = new Dictionary<PowerUpType, bool>();
     private PlayerController playerController;
 
     private List<PowerUpType> availablePowerUps = new List<PowerUpType>();
@@ -29,6 +30,7 @@ public class PowerUpManager : MonoBehaviour
 
     void Start()
     {
+        InitializePowerUps();
         playerController = GetComponent<PlayerController>();
 
         foreach (PowerUpType type in Enum.GetValues(typeof(PowerUpType)))
@@ -147,6 +149,7 @@ public class PowerUpManager : MonoBehaviour
         if (!acquiredPowerUps[type])
         {
             acquiredPowerUps[type] = true;
+            PlayerSaveState.Instance.PowerUps[type] = true;
 
             if (!availablePowerUps.Contains(type))
             {
@@ -167,6 +170,17 @@ public class PowerUpManager : MonoBehaviour
         else
         {
             powerUpDisplayManager.UpdatePowerUpDisplay("None");
+        }
+    }
+
+    public void InitializePowerUps()
+    {
+        foreach (KeyValuePair<PowerUpType, bool> entry in PlayerSaveState.Instance.PowerUps) 
+        {
+            if (entry.Value) 
+            {
+                AcquiredPowerUp(entry.Key);
+            }
         }
     }
 }

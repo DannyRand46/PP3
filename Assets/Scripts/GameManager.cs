@@ -3,11 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using static PowerUpManager;
 //using UnityEditor.ProBuilder;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
+    ////Stats
+    //public float PlayerHealth {  get; set; }
+    //public float PlayerMana { get; set; }
+    ////public float PlayerSpeed { get; set; }
+    //public float PlayerStamina { get; set; }
+    ////Inventory
+    //public List<WeaponStats> WeaponStats { get; private set; }
+    //public Dictionary<PowerUpType, bool> AcquiredPowerUps { get; private set; }
+    ////public int Currency { get; set; }
+
 
     [Header("----- Player -----")]
     public GameObject player;
@@ -45,15 +57,22 @@ public class GameManager : MonoBehaviour
     //Only uncomment code once implemented
     void Awake()
     {
+
         instance = this;
         timeScaleOrig = Time.timeScale;
         player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<PlayerController>();
         //enemySpawn = GameObject.FindWithTag("Enemy Spawn");
+
+        PlayerSaveState.Instance.PlayerHealth = 20;
+        PlayerSaveState.Instance.PlayerMana = 500;
+
+        
     }
 
     private void Start()
     {
+        InitializePlayerState();
         playerSpawn = GameObject.FindWithTag("Respawn");
     }
 
@@ -67,6 +86,31 @@ public class GameManager : MonoBehaviour
             pausedState();
             activeMenu = pauseMenu;
             activeMenu.SetActive(isPaused);
+        }
+    }
+
+    private void InitializePlayerState()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        PlayerWeapons playerWeapons = player.GetComponent<PlayerWeapons>();
+
+        if (player != null) 
+        {
+            PlayerController controller = player.GetComponent<PlayerController>();
+            PowerUpManager powerUpManager = player.GetComponent<PowerUpManager>();
+            if (controller != null)
+            {
+                PlayerSaveState.instance.Load();
+                controller.Hp = PlayerSaveState.instance.PlayerHealth;
+                controller.Mana = PlayerSaveState.instance.PlayerMana;
+
+                foreach (WeaponStats weapon in PlayerSaveState.instance.Weapons) 
+                {
+                    playerWeapons.SetWeaponStats(weapon);
+                }
+
+                powerUpManager.InitializePowerUps();
+            }
         }
     }
 

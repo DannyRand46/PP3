@@ -20,8 +20,8 @@ public class PlayerController : MonoBehaviour, IDamage
     [SerializeField] Transform groundRaySource;
 
     [Header("----Player Stats----")]
-    [Range(1, 50)][SerializeField] float Hp;
-    [Range(1, 500)][SerializeField] float Mana;
+    [Range(1, 50)][SerializeField] public float Hp;
+    [Range(1, 500)][SerializeField] public float Mana;
     [Range(1, 20)][SerializeField] private float playerSpeed;
     [Range(1, 3)][SerializeField] private float sprintMod;
     [Range(1, 3)][SerializeField] int jumpMax;
@@ -279,6 +279,8 @@ public class PlayerController : MonoBehaviour, IDamage
         StartCoroutine(GameManager.instance.flash());
         Hp -= amount;
         UpdatePlayerUi();
+
+        PlayerSaveState.instance.PlayerHealth = Hp;
         if (Hp <= 0)
         {
             GameManager.instance.youLose();
@@ -292,6 +294,7 @@ public class PlayerController : MonoBehaviour, IDamage
         {
             Mana -= amount;
             UpdatePlayerUi(); 
+            PlayerSaveState.instance.PlayerMana = Mana;
             return true;
         }
         else

@@ -184,6 +184,7 @@ public class Necromancer : MonoBehaviour
             necro.enabled = false;
             animator.SetBool("Death", true);
             StopAllCoroutines();
+            Currency.instance.GainDrachma(100);
         }
         else
         {

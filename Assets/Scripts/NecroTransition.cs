@@ -9,6 +9,7 @@ public class NecroTransition : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            PlayerSaveState.instance.Save();
             SceneManager.LoadScene("NecroScene");
         }
     }

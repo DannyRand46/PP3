@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
 public class PlayerWeapons : MonoBehaviour
 {
     [Header("----- Components -----")]
@@ -15,9 +15,9 @@ public class PlayerWeapons : MonoBehaviour
     [SerializeField] int shootDamage;
     [SerializeField] int shootDist;
 
-    [Header("~~~~~ Weapon Power Ups ~~~~~")]
-    [SerializeField] private bool damageBoosted;
-    [SerializeField] private float damageBoostAmount = 1.2f;
+    //[Header("~~~~~ Weapon Power Ups ~~~~~")]
+    //[SerializeField] private bool damageBoosted;
+    //[SerializeField] private float damageBoostAmount = 1.2f;
 
     int selectedweapon = 0;
     bool isShooting;
@@ -26,6 +26,7 @@ public class PlayerWeapons : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        InitializeWeapons();
         changeWeapon();
     }
 
@@ -45,6 +46,16 @@ public class PlayerWeapons : MonoBehaviour
             {
                 StartCoroutine(RELOADING());
             }
+        }
+    }
+
+    public void InitializeWeapons()
+    {
+        weaponlist.Clear();
+
+        foreach (WeaponStats savedWeapon in PlayerSaveState.instance.Weapons) 
+        {
+            SetWeaponStats(savedWeapon);
         }
     }
 
