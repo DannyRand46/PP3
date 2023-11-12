@@ -781,7 +781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352b25952cce94746ab773117411e3fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeTillDestroy: 0
+  timeTillDestroy: 9
 --- !u!1 &1014147316106558308 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 660683761004536650, guid: 0e7583764f376a54a9eea46b7344aff4, type: 3}
