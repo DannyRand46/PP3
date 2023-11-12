@@ -13,8 +13,8 @@ public class StealthPurch : MonoBehaviour
     void Start()
     {
         //Set items based on state of shop inventory
-        item1.SetActive(StealthShop.Invis);
-        item2.SetActive(StealthShop.Speed);
+        item1.SetActive(true);
+        item2.SetActive(true);
     }
 
     public void BuyItem1()

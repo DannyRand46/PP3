@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
         instance = this;
         timeScaleOrig = Time.timeScale;
         player = GameObject.FindWithTag("Player");
+        playerSpawn = GameObject.FindWithTag("Respawn");
         playerScript = player.GetComponent<PlayerController>();
         //enemySpawn = GameObject.FindWithTag("Enemy Spawn");
 
@@ -73,7 +74,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        InitializePlayerState();
+        //InitializePlayerState();
         playerSpawn = GameObject.FindWithTag("Respawn");
     }
 
