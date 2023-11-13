@@ -538,6 +538,98 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3748269534969715319, guid: 1404c96c9707f3642b3b077c1f658d4f, type: 3}
   m_PrefabInstance: {fileID: 216358771}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1665038581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1665038583}
+  - component: {fileID: 1665038582}
+  m_Layer: 0
+  m_Name: GolemSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1665038582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665038581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f66ea6ef755d1c541b235d157e801374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maze: {fileID: 1489438413}
+  gol: {fileID: 4495764705860263566, guid: 5b22b8d2d55e0a64c922aea3cca5595b, type: 3}
+--- !u!4 &1665038583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665038581}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -19.444181, y: -14.994856, z: -4.3741713}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1919679085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1919679087}
+  - component: {fileID: 1919679086}
+  m_Layer: 0
+  m_Name: Combat2Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1919679086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919679085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3fcd324a25cd1f4b94e8b6cd057b79a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maze: {fileID: 1489438413}
+  com2: {fileID: 6743476003293895596, guid: 117feaaf84abb6642be35e6f043ba9f7, type: 3}
+--- !u!4 &1919679087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1919679085}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -19.444183, y: -14.994856, z: -4.374172}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2001212661 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7610783572064447836, guid: 7a97ed9813819f74dbcd92dd5c467c91, type: 3}
@@ -655,14 +747,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameSystems
       objectReference: {fileID: 0}
-    - target: {fileID: 5584415314094645294, guid: 7a97ed9813819f74dbcd92dd5c467c91, type: 3}
-      propertyPath: currT
-      value: 
-      objectReference: {fileID: 2001212661}
-    - target: {fileID: 5584415314094645294, guid: 7a97ed9813819f74dbcd92dd5c467c91, type: 3}
-      propertyPath: currDis
-      value: 
-      objectReference: {fileID: 13330659}
     - target: {fileID: 7300684324917548497, guid: 7a97ed9813819f74dbcd92dd5c467c91, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -896,6 +980,8 @@ SceneRoots:
   - {fileID: 8249440173386203533}
   - {fileID: 712431065}
   - {fileID: 403332083}
+  - {fileID: 1919679087}
   - {fileID: 235400474}
+  - {fileID: 1665038583}
   - {fileID: 8016125293232401946}
   - {fileID: 780304195359610216}
