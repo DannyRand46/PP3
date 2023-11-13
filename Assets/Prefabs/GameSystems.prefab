@@ -370,6 +370,7 @@ MonoBehaviour:
   ammoMax: {fileID: 0}
   consumables: {fileID: 8770808596405813049}
   PlayerDamageFlashScreen: {fileID: 7262070242981280345}
+  PowerUpDisplay: {fileID: 0}
   isPaused: 0
 --- !u!114 &8359253227333144838
 MonoBehaviour:

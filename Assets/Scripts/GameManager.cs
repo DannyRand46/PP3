@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI ammoMax;
     public GameObject consumables;
     [SerializeField] GameObject PlayerDamageFlashScreen;
+    //[SerializeField] GameObject PowerUpDisplay;
 
     public bool isPaused;
     float timeScaleOrig;
