@@ -22,12 +22,10 @@ public class AudioSettings : MonoBehaviour
 
     public int GetMusicVolume()
     {
-        Debug.Log("Music: " + ((int)(MusicVolume * 100)));
         return (int)(MusicVolume * 100);// 0 to 100
     }
     public int GetSXFVolume()
     {
-        Debug.Log("SFX: " + ((int)(SFXVolume * 100)));
         return (int)(SFXVolume * 100);// 0 to 100
     }
     public float GetNormalizedMusicVolume()

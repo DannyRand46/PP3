@@ -151,15 +151,12 @@ public class AIMino : MonoBehaviour, IDamage
         Vector3 headPos = transform.position;
         headPos.y = 5;
 
-        Debug.DrawLine(headPos, headPos + (transform.forward * 3), Color.green);
-        Debug.DrawLine(feetPos, feetPos + (transform.forward * 3), Color.blue);
         feetHit = Physics.Raycast(feetPos, transform.forward, out feetCheck);
         headHit = Physics.Raycast(headPos, transform.forward, out destructibleWallCheck);
 
         if (headHit && feetHit)
         {
             // if they're not the same object being hit
-            Debug.Log("BOTH Hit head: " + destructibleWallCheck.transform.gameObject.name +" feet: " + feetCheck.transform.gameObject.name);
             if (destructibleWallCheck.colliderInstanceID != feetCheck.colliderInstanceID)
             {
                 if (destructibleWallCheck.distance <= range)
@@ -196,23 +193,19 @@ public class AIMino : MonoBehaviour, IDamage
                 onEndCharge();
                 return;
             }
-            Debug.Log("AHAHAHAHAHAHA RUSHING IN!!!");
             agent.SetDestination(chargedestination);
 
             RaycastHit hit;
-            Debug.DrawLine(hitBox.transform.position, transform.forward);
             if (Physics.Raycast(hitBox.transform.position, transform.forward, out hit))
             {
                 if (hit.collider.CompareTag("Wall") && hit.distance <= wallDetectionDistance)
                 {
-                    Debug.Log("Hit wall at: " + transform.position);
                     onHitWall();
                     return;
                 }
             }
             if(agent.remainingDistance == 0)
             {
-                Debug.Log("End charge at: " + transform.position);
                 onEndCharge();
             }
             return;
@@ -286,7 +279,6 @@ public class AIMino : MonoBehaviour, IDamage
 
         if(currentStage == bossStages.SECOND_STAGE && chargeAttackCooldownTracker <= 0)
         {
-            Debug.Log("Okay we made it. Now next, range test");
             if ((GameManager.instance.player.transform.position - transform.position).magnitude <= rushRange)
             {
                 ChargeAttack();
@@ -360,12 +352,10 @@ public class AIMino : MonoBehaviour, IDamage
         chargeAttackCooldownTracker = chargeAttackCooldown;
 
         anim.SetTrigger("Charge Attack Trigger");
-        Debug.Log("Roar!!!! Start charge!");
     }
 
     void TriggerStartRush()
     {
-        Debug.Log("RUSH TIME!!!");
         chargeDir = GameManager.instance.player.transform.position - transform.position;
 
         // flatten direction to one world axis
@@ -391,21 +381,18 @@ public class AIMino : MonoBehaviour, IDamage
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 1500, 6))
         {
-            Debug.Log("Hit something, charge point: " + hit.point);
             chargedestination = hit.point;
             agent.SetDestination(hit.point);
         }
         else
         {
             chargedestination = transform.position + (chargeDir * (1500));
-            Debug.Log("From: " +transform.position + " Charge Point: " + chargedestination);
             agent.SetDestination(chargedestination);
         }
     }
 
     void onHitWall()
     {
-        Debug.Log("Ouch I hit a wall");
         // call this when the minotaur collides with a wall
         agent.speed = 0;
         anim.SetTrigger("Charge Hit Wall Trigger");
@@ -423,7 +410,6 @@ public class AIMino : MonoBehaviour, IDamage
 
     void EndChargeAttack()
     {
-        Debug.Log("back to normal now");
         isChargeAttacking = false;
         chargeAttackCooldownTracker = chargeAttackCooldown;
         agent.speed = stageTwoSpeed;
