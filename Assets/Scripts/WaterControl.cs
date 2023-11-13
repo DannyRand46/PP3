@@ -7,6 +7,7 @@ public class WaterControl : MonoBehaviour
     [SerializeField] float riseSpeed = 0.1f;
     [SerializeField] float maxHeight = 10.0f;
     public ChallengeManager challengeManager;
+    
 
     public bool isRising = false;
 
