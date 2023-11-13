@@ -19,6 +19,8 @@ public class ReturnToMaze : MonoBehaviour
     {
         if(playerInRange && Input.GetButtonDown("Interact"))
         {
+            Currency.instance.GainDrachma(50);
+            PlayerSaveState.instance.Save();
             SceneManager.LoadScene("Prototype2");
         }
     }

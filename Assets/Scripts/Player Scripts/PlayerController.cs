@@ -124,7 +124,7 @@ public class PlayerController : MonoBehaviour, IDamage
         Crouched();
         //checks to make sure player is grounded
         RaycastHit GroundCheck;
-        Debug.DrawRay(groundRaySource.position, transform.TransformDirection(Vector3.down * 0.1f));
+        
         if (groundedPlayer && move.normalized.magnitude > 0.3f && !footstepsPlaying)
         {
             StartCoroutine(PlayFootSteps());
