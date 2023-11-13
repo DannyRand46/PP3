@@ -64,7 +64,7 @@ public class CubePuzzle : MonoBehaviour
         }
 
         UnlockDoor();
-        //also, award currency
+        Currency.instance.GainDrachma(50);
     }
 
     void UnlockDoor()
