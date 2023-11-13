@@ -119,14 +119,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aud: {fileID: 4868964737328733175}
+  attPos: {fileID: 0}
   weaponlist:
   - {fileID: 11400000, guid: a8664cc632affe04f80fac2e5c99db26, type: 2}
   weaponModel: {fileID: 1063020504634763783}
   shootRate: 0
   shootDamage: 0
   shootDist: 0
-  damageBoosted: 0
-  damageBoostAmount: 1.2
 --- !u!114 &7166801396116980800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +198,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  manaCost: 0
+  manaCost: 75
 --- !u!33 &3607773146104892616
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -422,8 +421,8 @@ Transform:
   m_GameObject: {fileID: 1063020504634763783}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.75, y: -0.29499912, z: 0.9499998}
-  m_LocalScale: {x: 0.6175008, y: 0.5547246, z: 0.31417868}
+  m_LocalPosition: {x: 0.2, y: -0.15, z: 0.35}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6917442629206589166}
@@ -575,12 +574,12 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 15
+  orthographic: 1
+  orthographic size: 50
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1096
+    m_Bits: 3144
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: e721ea06f62b1994ca13f29b9b4c0bd9, type: 2}
   m_TargetDisplay: 0

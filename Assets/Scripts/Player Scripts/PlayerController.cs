@@ -26,7 +26,6 @@ public class PlayerController : MonoBehaviour, IDamage
     [Range(1, 3)][SerializeField] private float sprintMod;
     [Range(1, 3)][SerializeField] int jumpMax;
     [Range(8, 30)][SerializeField] private float jumpHeight;
-    //[Range(-10, 40)][SerializeField] private float gravityMod;
     [Range(-10, -40)][SerializeField] private float gravityValue;
 
     [Header("----Audio----")]
@@ -88,7 +87,6 @@ public class PlayerController : MonoBehaviour, IDamage
         //if its not paused do this 
         if (!GameManager.instance.isPaused)
         {
-            //CheatsyDoodle();
             
             movement();
             Sprint();
@@ -340,35 +338,6 @@ public class PlayerController : MonoBehaviour, IDamage
         return isSprinting;
     }
 
-    //Cheats for devs to play around with
-    void CheatsyDoodle()
-    {
-        if (Input.GetButton("Submit"))
-        {
-            controller.enabled = false;
-            transform.position = GameManager.instance.devCheat.transform.position;
-            controller.enabled = true;
-        }
-        if(Input.GetButton("L"))
-        {
-            controller.enabled = false;
-            transform.position = GameManager.instance.lightningCheat.transform.position;
-            controller.enabled = true;
-        }
-        if(Input.GetButton("F"))
-        {
-            controller.enabled = false;
-            transform.position = GameManager.instance.fireCheat.transform.position;
-            controller.enabled = true;
-        }
-        if(Input.GetButton("T"))
-        {
-            controller.enabled = false;
-            transform.position = GameManager.instance.treasureCheat.transform.position;
-            controller.enabled = true;
-        }
-    }
-
     public void DamageReduction()
     {
         damageReduction = true;
@@ -391,7 +360,6 @@ public class PlayerController : MonoBehaviour, IDamage
             }
             shieldCoroutine = StartCoroutine(ShieldRoutine());
         }
-
     }
 
     public void ShieldOff()

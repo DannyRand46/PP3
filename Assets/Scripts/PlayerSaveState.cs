@@ -7,12 +7,11 @@ public class PlayerSaveState
 {
     public static PlayerSaveState instance = new PlayerSaveState();
     //Stats
-    public float PlayerHealth; //{ get; set; }
-    public float PlayerMana; //{ get; set; }
+    public float PlayerHealth;
+    public float PlayerMana;
 
-    //public float PlayerStamina; //{ get; set; }
     //Inventory
-    public List<WeaponStats> Weapons;//{ get; private set; }
+    public List<WeaponStats> Weapons;
     public Dictionary<PowerUpType, bool> PowerUps;
     
     public PlayerSaveState()
@@ -21,7 +20,6 @@ public class PlayerSaveState
         PowerUps = new Dictionary<PowerUpType, bool>();
         PlayerHealth = 20;
         PlayerMana = 500;
-        //PlayerStamina = 100;
     }
 
     //public static PlayerSaveState Instance

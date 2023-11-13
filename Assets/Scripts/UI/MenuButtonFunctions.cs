@@ -14,7 +14,7 @@ public class MenuButtonFunctions : MonoBehaviour
     public void restart()
     {
         //restarts game by reloading the active scene
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene("Prototype2");
         GameManager.instance.unpausedState();
     }
 

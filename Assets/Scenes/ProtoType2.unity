@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maze: {fileID: 1489438413}
-  miniBoss: {fileID: 8842567601568243665, guid: e3c284fa11b0480479d0114bfde76259, type: 3}
+  miniBoss: {fileID: 8058900297114325395, guid: ce5166fc9ac50c0479e2211471868153, type: 3}
 --- !u!4 &235400474
 Transform:
   m_ObjectHideFlags: 0
@@ -261,7 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maze: {fileID: 1489438413}
-  combat: {fileID: 8817607441910428240, guid: c5a30285612a84a448a008bf2ae66878, type: 3}
+  combat: {fileID: 2765735845711364848, guid: df4aeafb1c581cc4d83a4974b47dd57c, type: 3}
 --- !u!4 &403332083
 Transform:
   m_ObjectHideFlags: 0
@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 686181378}
   m_Layer: 0
   m_Name: PlayerDrachma
-  m_TagString: Untagged
+  m_TagString: Currency
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -473,10 +473,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 12497278735318648, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
-      propertyPath: manaCost
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 12497278735318648, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
       propertyPath: objIms.Array.data[0]
       value: 
       objectReference: {fileID: 1066965435179688609}
@@ -491,46 +487,6 @@ PrefabInstance:
     - target: {fileID: 34362289372371928, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1524433056192321052, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2034216708900791106, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2034216708900791106, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2034216708900791106, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2034216708900791106, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2034216708900791106, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2034216708900791106, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 2316135792545394986, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5808360451207308426, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 3144
-      objectReference: {fileID: 0}
-    - target: {fileID: 5811052330976403266, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 2943
       objectReference: {fileID: 0}
     - target: {fileID: 7012421411596961371, guid: 49e460495a8fad041933322edaa1ac72, type: 3}
       propertyPath: m_LocalPosition.x
@@ -699,6 +655,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameSystems
       objectReference: {fileID: 0}
+    - target: {fileID: 5584415314094645294, guid: 7a97ed9813819f74dbcd92dd5c467c91, type: 3}
+      propertyPath: currT
+      value: 
+      objectReference: {fileID: 2001212661}
+    - target: {fileID: 5584415314094645294, guid: 7a97ed9813819f74dbcd92dd5c467c91, type: 3}
+      propertyPath: currDis
+      value: 
+      objectReference: {fileID: 13330659}
     - target: {fileID: 7300684324917548497, guid: 7a97ed9813819f74dbcd92dd5c467c91, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -740,8 +704,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 8598171186143375280, guid: 7a97ed9813819f74dbcd92dd5c467c91, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a97ed9813819f74dbcd92dd5c467c91, type: 3}
