@@ -127,7 +127,6 @@ public class PowerUpManager : MonoBehaviour
     {
         if (availablePowerUps.Count == 0)
         {
-            Debug.Log("No power ups available");
             return;
         }
 
