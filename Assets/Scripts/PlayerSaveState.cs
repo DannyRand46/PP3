@@ -58,7 +58,7 @@ public class PlayerSaveState
         if (!string.IsNullOrEmpty(weaponsJson))
         {
             SerializeWeapons serializableWeapons = JsonUtility.FromJson<SerializeWeapons>(weaponsJson);
-            Weapons = serializableWeapons.ToList(); // Make sure you have a ToList method in SerializableWeapons class
+            Weapons = serializableWeapons.ToList(); 
         }
 
         // Load power-ups
@@ -66,7 +66,7 @@ public class PlayerSaveState
         if (!string.IsNullOrEmpty(powerUpsJson))
         {
             SerializePowerUps serializablePowerUps = JsonUtility.FromJson<SerializePowerUps>(powerUpsJson);
-            PowerUps = serializablePowerUps.ToDictionary(); // Make sure you have a ToDictionary method in SerializablePowerUps class
+            PowerUps = serializablePowerUps.ToDictionary(); 
         }
     }
 

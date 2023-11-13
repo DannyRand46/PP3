@@ -134,7 +134,7 @@ public class Necromancer : MonoBehaviour
 
         for (int i = 0; i < 3; i++)
         {
-            GameObject orb = Instantiate(magicOrbPrefab, castPosition.position, Quaternion.identity);
+            Instantiate(magicOrbPrefab, castPosition.position, Quaternion.identity);
 
         }
 
@@ -185,6 +185,7 @@ public class Necromancer : MonoBehaviour
             animator.SetBool("Death", true);
             StopAllCoroutines();
             Currency.instance.GainDrachma(100);
+            MazeState.instance.mini1 = true;
         }
         else
         {
