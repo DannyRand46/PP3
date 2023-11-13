@@ -116,7 +116,7 @@ public class RecursiveDepthFirstSearch : Maze
                 //Check to avoid respawning already aquired gear
                 if (MazeState.instance.items1[i].shouldSpawn)
                 {
-                    Instantiate(MazeState.instance.items1[i].item, new Vector3((MazeState.instance.items1[i].tile.x * scale) + (scale / 2), 2, (MazeState.instance.items1[i].tile.z * scale) + (scale / 2)), Quaternion.identity);
+                    Instantiate(MazeState.instance.items1[i].item, new Vector3((MazeState.instance.items1[i].tile.x * scale) + (scale / 2), 0, (MazeState.instance.items1[i].tile.z * scale) + (scale / 2)), Quaternion.identity);
                 }
             }
         }

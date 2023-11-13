@@ -51,11 +51,14 @@ public class PlayerWeapons : MonoBehaviour
 
     public void InitializeWeapons()
     {
-        weaponlist.Clear();
-
-        foreach (WeaponStats savedWeapon in PlayerSaveState.instance.Weapons) 
+        if (PlayerSaveState.instance.Weapons.Count != 0)
         {
-            SetWeaponStats(savedWeapon);
+            weaponlist.Clear();
+
+            foreach (WeaponStats savedWeapon in PlayerSaveState.instance.Weapons)
+            {
+                SetWeaponStats(savedWeapon);
+            }
         }
     }
 

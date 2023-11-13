@@ -25,15 +25,14 @@ public class Tracker : MonoBehaviour
     {
         if(Input.GetButtonDown("Trace"))
         {
-
-            if (GameManager.instance.playerScript.ConsumeMana(manaCost))
+            //If object exists in scene, track to it
+            GameObject obj = GameObject.FindWithTag(objs[index].tag);
+            if (obj != null)
             {
-                //If object exists in scene, track to it
-                GameObject obj = GameObject.FindWithTag(objs[index].tag);
-                if (obj != null)
+                if (GameManager.instance.playerScript.ConsumeMana(manaCost))
                 {
                     Instantiate(tracker, gameObject.transform.position, Quaternion.identity);
-                } 
+                }
             }
         }
 
