@@ -12,6 +12,7 @@ public class ChallengeManager : MonoBehaviour
     public GameObject waterObject;
     public GameObject loseBarrier;
     
+    
     private void Start()
     {
         if(player != null)
