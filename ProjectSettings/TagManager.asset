@@ -24,6 +24,7 @@ TagManager:
   - Combat2Transition
   - Currency
   - Currency Text
+  - CubeRoom
   layers:
   - Default
   - TransparentFX
