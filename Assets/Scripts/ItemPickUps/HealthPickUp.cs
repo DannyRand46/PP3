@@ -9,8 +9,8 @@ public class HealthPickUp : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Destroy(gameObject);
             GameManager.instance.playerScript.AddMana(AddedMana);
+            Destroy(gameObject);
         }
     }
 }
