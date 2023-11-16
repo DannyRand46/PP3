@@ -492,5 +492,10 @@ public class PlayerController : MonoBehaviour, IDamage
 
     public bool IsInvisible() { return isInvisible; }
 
+    public bool GetCanJump()
+    {
+        return (jumpedtimes <= jumpMax);
+    }
+
 
 }
