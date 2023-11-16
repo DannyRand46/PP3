@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour, IDamage
     [SerializeField] CharacterController controller;
     [SerializeField] AudioSource aud;
     [SerializeField] Transform groundRaySource;
+    [SerializeField] Camera playerCamera;
 
     [Header("----Player Stats----")]
     [Range(1, 50)][SerializeField] public float Hp;
@@ -176,6 +177,16 @@ public class PlayerController : MonoBehaviour, IDamage
     IEnumerator PlayFootSteps()
     {
         footstepsPlaying = true;
+
+        if (AudioSettings.instance.GetIsMuted())
+        {
+            audFootStepsvol = 0;
+        }
+        else
+        {
+            audFootStepsvol = AudioSettings.instance.GetNormalizedSXFVolume();
+        }
+
         aud.PlayOneShot(AudFootSteps[Random.Range(0, AudFootSteps.Length)], audFootStepsvol);
 
         if (!isSprinting)
@@ -238,6 +249,10 @@ public class PlayerController : MonoBehaviour, IDamage
             //decrement speed
             playerSpeed /= sprintMod;
 
+            Vector3 position = playerCamera.transform.position;
+            position.y -= 0.6f;
+            playerCamera.transform.position = position;
+
         }//check if grouded check button if true
         else if (groundedPlayer && Input.GetButtonDown("Crouch") && Crouching == true)
         {
@@ -246,6 +261,9 @@ public class PlayerController : MonoBehaviour, IDamage
             controller.height *= 2;
             //give player back speed 
             playerSpeed *= sprintMod;
+            Vector3 position = playerCamera.transform.position;
+            position.y += 0.6f;
+            playerCamera.transform.position = position;
         }
     }
 
