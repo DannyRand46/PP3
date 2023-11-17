@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.20067206, g: 0.20332453, b: 0.20366472, a: 1}
+  m_IndirectSpecularColor: {r: 0.18827617, g: 0.19113809, b: 0.19109794, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: b74511db782e12a49a1d1b89709852e3, type: 2}
 --- !u!1 &237342020
 GameObject:
   m_ObjectHideFlags: 0
@@ -135,12 +135,12 @@ GameObject:
   - component: {fileID: 237342023}
   - component: {fileID: 237342022}
   - component: {fileID: 237342021}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ledge (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &237342021
 BoxCollider:
@@ -240,12 +240,12 @@ GameObject:
   - component: {fileID: 255187223}
   - component: {fileID: 255187222}
   - component: {fileID: 255187221}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ledge (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &255187221
 BoxCollider:
@@ -345,12 +345,12 @@ GameObject:
   - component: {fileID: 294195017}
   - component: {fileID: 294195016}
   - component: {fileID: 294195015}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ledge (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &294195015
 BoxCollider:
@@ -450,7 +450,7 @@ GameObject:
   - component: {fileID: 301934039}
   - component: {fileID: 301934038}
   - component: {fileID: 301934037}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ChallengeRoom2Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -843,12 +843,12 @@ GameObject:
   - component: {fileID: 764017930}
   - component: {fileID: 764017929}
   - component: {fileID: 764017928}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &764017928
 BoxCollider:
@@ -948,12 +948,12 @@ GameObject:
   - component: {fileID: 790478305}
   - component: {fileID: 790478304}
   - component: {fileID: 790478303}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ledge (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &790478303
 BoxCollider:
@@ -1053,12 +1053,12 @@ GameObject:
   - component: {fileID: 832058763}
   - component: {fileID: 832058762}
   - component: {fileID: 832058761}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ledge (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &832058761
 BoxCollider:
@@ -1158,12 +1158,12 @@ GameObject:
   - component: {fileID: 881228915}
   - component: {fileID: 881228914}
   - component: {fileID: 881228913}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ledge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &881228913
 BoxCollider:
@@ -1263,12 +1263,12 @@ GameObject:
   - component: {fileID: 929370297}
   - component: {fileID: 929370296}
   - component: {fileID: 929370295}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ledge (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &929370295
 BoxCollider:
@@ -1368,12 +1368,12 @@ GameObject:
   - component: {fileID: 1008256234}
   - component: {fileID: 1008256233}
   - component: {fileID: 1008256232}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ledge (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1008256232
 BoxCollider:
@@ -1473,12 +1473,12 @@ GameObject:
   - component: {fileID: 1025923820}
   - component: {fileID: 1025923819}
   - component: {fileID: 1025923818}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ledge (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1025923818
 BoxCollider:
@@ -1740,12 +1740,12 @@ GameObject:
   - component: {fileID: 1140838128}
   - component: {fileID: 1140838127}
   - component: {fileID: 1140838126}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ledge (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1140838126
 BoxCollider:
@@ -1903,12 +1903,12 @@ GameObject:
   - component: {fileID: 1283532140}
   - component: {fileID: 1283532139}
   - component: {fileID: 1283532138}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ledge (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1283532138
 BoxCollider:
@@ -2008,12 +2008,12 @@ GameObject:
   - component: {fileID: 1289519772}
   - component: {fileID: 1289519771}
   - component: {fileID: 1289519770}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ledge (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1289519770
 BoxCollider:
@@ -2113,12 +2113,12 @@ GameObject:
   - component: {fileID: 1326664844}
   - component: {fileID: 1326664843}
   - component: {fileID: 1326664842}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ledge (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1326664842
 BoxCollider:
@@ -2380,12 +2380,12 @@ GameObject:
   - component: {fileID: 1596320146}
   - component: {fileID: 1596320145}
   - component: {fileID: 1596320144}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ledge (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1596320144
 BoxCollider:
@@ -2485,12 +2485,12 @@ GameObject:
   - component: {fileID: 1597054773}
   - component: {fileID: 1597054772}
   - component: {fileID: 1597054771}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1597054771
 BoxCollider:
@@ -2590,12 +2590,12 @@ GameObject:
   - component: {fileID: 1610899441}
   - component: {fileID: 1610899440}
   - component: {fileID: 1610899439}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1610899439
 BoxCollider:
@@ -2789,12 +2789,12 @@ GameObject:
   - component: {fileID: 1839078510}
   - component: {fileID: 1839078509}
   - component: {fileID: 1839078508}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1839078508
 BoxCollider:
@@ -2894,12 +2894,12 @@ GameObject:
   - component: {fileID: 1845404642}
   - component: {fileID: 1845404641}
   - component: {fileID: 1845404640}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ledge (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1845404640
 BoxCollider:
@@ -2999,12 +2999,12 @@ GameObject:
   - component: {fileID: 1850724617}
   - component: {fileID: 1850724616}
   - component: {fileID: 1850724615}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ledge (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1850724615
 BoxCollider:
@@ -3104,12 +3104,12 @@ GameObject:
   - component: {fileID: 1865428090}
   - component: {fileID: 1865428089}
   - component: {fileID: 1865428088}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1865428088
 BoxCollider:
@@ -3209,12 +3209,12 @@ GameObject:
   - component: {fileID: 1911141708}
   - component: {fileID: 1911141707}
   - component: {fileID: 1911141706}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ledge (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1911141706
 BoxCollider:
@@ -3314,12 +3314,12 @@ GameObject:
   - component: {fileID: 1926240449}
   - component: {fileID: 1926240448}
   - component: {fileID: 1926240447}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ledge (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1926240447
 BoxCollider:
@@ -3524,12 +3524,12 @@ GameObject:
   - component: {fileID: 2051001267}
   - component: {fileID: 2051001266}
   - component: {fileID: 2051001265}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ledge (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &2051001265
 BoxCollider:
@@ -3686,12 +3686,12 @@ GameObject:
   - component: {fileID: 2056693227}
   - component: {fileID: 2056693226}
   - component: {fileID: 2056693225}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Platform (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &2056693225
 BoxCollider:

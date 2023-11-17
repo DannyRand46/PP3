@@ -192,12 +192,12 @@ GameObject:
   - component: {fileID: 49154981}
   - component: {fileID: 49154980}
   - component: {fileID: 49154979}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ramp (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &49154979
 BoxCollider:
@@ -411,12 +411,12 @@ GameObject:
   - component: {fileID: 109196679}
   - component: {fileID: 109196678}
   - component: {fileID: 109196677}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ramp (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &109196677
 BoxCollider:
@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 150183481}
   - component: {fileID: 150183480}
   - component: {fileID: 150183479}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ChallengeRoomFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -622,12 +622,12 @@ GameObject:
   - component: {fileID: 152224903}
   - component: {fileID: 152224902}
   - component: {fileID: 152224901}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ramp (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &152224901
 BoxCollider:
@@ -1147,12 +1147,12 @@ GameObject:
   - component: {fileID: 346041700}
   - component: {fileID: 346041699}
   - component: {fileID: 346041698}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ramp (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &346041698
 BoxCollider:
@@ -1252,12 +1252,12 @@ GameObject:
   - component: {fileID: 619195359}
   - component: {fileID: 619195358}
   - component: {fileID: 619195357}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ramp (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &619195357
 BoxCollider:
@@ -1357,12 +1357,12 @@ GameObject:
   - component: {fileID: 624345223}
   - component: {fileID: 624345222}
   - component: {fileID: 624345221}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ramp (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &624345221
 BoxCollider:
@@ -1462,12 +1462,12 @@ GameObject:
   - component: {fileID: 702678334}
   - component: {fileID: 702678333}
   - component: {fileID: 702678332}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ramp (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &702678332
 BoxCollider:
@@ -1672,12 +1672,12 @@ GameObject:
   - component: {fileID: 729592469}
   - component: {fileID: 729592468}
   - component: {fileID: 729592467}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ramp (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &729592467
 BoxCollider:
@@ -1777,12 +1777,12 @@ GameObject:
   - component: {fileID: 824822709}
   - component: {fileID: 824822708}
   - component: {fileID: 824822707}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ramp (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &824822707
 BoxCollider:
@@ -1939,12 +1939,12 @@ GameObject:
   - component: {fileID: 1012822920}
   - component: {fileID: 1012822919}
   - component: {fileID: 1012822918}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ramp (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1012822918
 BoxCollider:
@@ -2044,12 +2044,12 @@ GameObject:
   - component: {fileID: 1076535424}
   - component: {fileID: 1076535423}
   - component: {fileID: 1076535422}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ramp (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1076535422
 BoxCollider:
@@ -2254,12 +2254,12 @@ GameObject:
   - component: {fileID: 1196838270}
   - component: {fileID: 1196838269}
   - component: {fileID: 1196838268}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ramp (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1196838268
 BoxCollider:
@@ -2416,12 +2416,12 @@ GameObject:
   - component: {fileID: 1227600903}
   - component: {fileID: 1227600902}
   - component: {fileID: 1227600901}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ramp (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1227600901
 BoxCollider:
@@ -2521,12 +2521,12 @@ GameObject:
   - component: {fileID: 1314406430}
   - component: {fileID: 1314406429}
   - component: {fileID: 1314406428}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ramp (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1314406428
 BoxCollider:
@@ -2777,12 +2777,12 @@ GameObject:
   - component: {fileID: 1417123832}
   - component: {fileID: 1417123831}
   - component: {fileID: 1417123830}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ramp (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1417123830
 BoxCollider:
@@ -2997,12 +2997,12 @@ GameObject:
   - component: {fileID: 1726060807}
   - component: {fileID: 1726060806}
   - component: {fileID: 1726060805}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ramp (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1726060805
 BoxCollider:
@@ -3159,12 +3159,12 @@ GameObject:
   - component: {fileID: 1791945784}
   - component: {fileID: 1791945783}
   - component: {fileID: 1791945782}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ramp (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1791945782
 BoxCollider:
@@ -3264,12 +3264,12 @@ GameObject:
   - component: {fileID: 1816246452}
   - component: {fileID: 1816246451}
   - component: {fileID: 1816246450}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ramp (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1816246450
 BoxCollider:
@@ -3636,12 +3636,12 @@ GameObject:
   - component: {fileID: 1999023531}
   - component: {fileID: 1999023530}
   - component: {fileID: 1999023529}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ramp (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &1999023529
 BoxCollider:
@@ -3846,12 +3846,12 @@ GameObject:
   - component: {fileID: 2124698700}
   - component: {fileID: 2124698699}
   - component: {fileID: 2124698698}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Ramp (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!65 &2124698698
 BoxCollider:
