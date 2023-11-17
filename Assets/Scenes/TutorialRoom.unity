@@ -1800,24 +1800,26 @@ MonoBehaviour:
 
     [Shift] Run
 
-    [LeftCtrl] Crouch/Slide
+    [LeftCtrl] Slide (while running)
 
-    [Q] Dash(Provides
-    Invincibility)
+    [C]
+    Crouch
+
+    [Q] Dash (Provides Invincibility)
 
     [E] Interact/Pick Up
 
-    [LeftClick] Attack
+    [LeftClick]
+    Attack
 
-    [RightClick]
-    Enable Tracker
+    [RightClick] Enable Tracker
 
     [Tab] Change Tracked Item/Goal
 
-    [Scroll] Swap Weapons
+    [Scroll]
+    Swap Weapons
 
-    [P]
-    Open Pause Menu'
+    [P] Open Pause Menu'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
