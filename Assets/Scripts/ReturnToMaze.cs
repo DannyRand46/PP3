@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -29,12 +30,22 @@ public class ReturnToMaze : MonoBehaviour
                 Currency.instance.GainDrachma(50);
                 PlayerSaveState.instance.Save();
             }
+            else if (fade == null)
+            {
+                SceneManager.LoadScene("ProtoType2");
+                Currency.instance.GainDrachma(50);
+                PlayerSaveState.instance.Save();
+            }
         }
-        if (fade.f == false && doorcheck)
+        if (fade != null)
         {
+            if (fade.f == false && doorcheck)
+            {
 
-            SceneManager.LoadScene("ProtoType2");
+                SceneManager.LoadScene("ProtoType2");
+            } 
         }
+
 
     }
 
