@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class Currency : MonoBehaviour
 {
     public static Currency instance;
 
-    [SerializeField] GameObject currDisplay;
-    [SerializeField] TMP_Text currText;
+    public GameObject currDisplay;
+    public TMP_Text currText;
     public bool activeDis;
 
     int drachma;

@@ -9,6 +9,7 @@ public class MainMazeTransition : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            PlayerSaveState.instance.Save();
             SceneManager.LoadScene("ProtoType2");
         }
     }

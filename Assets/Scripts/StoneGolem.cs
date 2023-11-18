@@ -227,6 +227,8 @@ public class StoneGolem : MonoBehaviour, IDamage
             stopMoving();
             animator.SetBool("Death", true);
             Destroy(gameObject);
+            Currency.instance.GainDrachma(100);
+            MazeState.instance.mini2 = true;
         }
         else
         {

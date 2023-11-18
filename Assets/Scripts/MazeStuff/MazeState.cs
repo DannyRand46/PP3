@@ -12,6 +12,9 @@ public class MazeState : MonoBehaviour
     public List<MapNodeDFS> maze1;
     public List<TileItem> items1;
     public List<TileItem> enemies1;
+
+    public bool mini1;
+    public bool mini2;
     
 
     private void Awake()
@@ -30,6 +33,8 @@ public class MazeState : MonoBehaviour
         maze1 = null;
         items1 = null;
         enemies1 = null;
+        mini1 = false;
+        mini2 = false;
 
         //Keeps this object as instanced for tracking info between scenes
         DontDestroyOnLoad(gameObject);

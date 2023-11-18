@@ -9,6 +9,7 @@ public class CombatChallenge2Transition : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            PlayerSaveState.instance.Save();
             SceneManager.LoadScene("CombatChallengeRoom2");
         }
     }

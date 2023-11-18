@@ -20,22 +20,17 @@ public class RecursiveDepthFirstSearch : Maze
     //Goal reference for placing
     [SerializeField] GameObject goal;
     [SerializeField] GameObject start;
-    [SerializeField] GameObject devCheat;
 
     //Enemy references for spawning
     [SerializeField] GameObject rangedEnemy;
     [SerializeField] GameObject meleeEnemy;
     [SerializeField] GameObject phantomEnemy;
     [SerializeField] GameObject mino;
-    [SerializeField] GameObject treasure;
-    [SerializeField] GameObject treasureCheat;
 
     //Weapon pickup references for spawning
     [SerializeField] GameObject gem;
     [SerializeField] GameObject lStaff;
-    [SerializeField] GameObject lCheat;
     [SerializeField] GameObject fStaff;
-    [SerializeField] GameObject fCheat;
 
     //List of map tiles visited for recursion
     List<MapNodeDFS> visited = new List<MapNodeDFS>();
@@ -116,7 +111,7 @@ public class RecursiveDepthFirstSearch : Maze
                 //Check to avoid respawning already aquired gear
                 if (MazeState.instance.items1[i].shouldSpawn)
                 {
-                    Instantiate(MazeState.instance.items1[i].item, new Vector3((MazeState.instance.items1[i].tile.x * scale) + (scale / 2), 2, (MazeState.instance.items1[i].tile.z * scale) + (scale / 2)), Quaternion.identity);
+                    Instantiate(MazeState.instance.items1[i].item, new Vector3((MazeState.instance.items1[i].tile.x * scale) + (scale / 2), 0, (MazeState.instance.items1[i].tile.z * scale) + (scale / 2)), Quaternion.identity);
                 }
             }
         }
@@ -135,7 +130,6 @@ public class RecursiveDepthFirstSearch : Maze
             int tileZ = (depth - 1);
             Vector3 pos = new Vector3((tileX * scale) + (scale / 2), 0, (tileZ * scale) + (scale / 2));
             Instantiate(goal, pos, Quaternion.identity);
-            Instantiate(devCheat, new Vector3(pos.x, 4, pos.z + 3), Quaternion.identity);
             goalSpawned = true;
 
             //Save goal position
@@ -147,7 +141,6 @@ public class RecursiveDepthFirstSearch : Maze
             int tileZ = Random.Range(0, depth);
             Vector3 pos = new Vector3((tileX * scale) + (scale / 2), 0, (tileZ * scale) + (scale / 2));
             Instantiate(goal, pos, Quaternion.identity);
-            Instantiate(devCheat, new Vector3(pos.x + 3, 4, pos.z), Quaternion.identity);
             goalSpawned = true;
 
             //Save goal position
@@ -166,7 +159,6 @@ public class RecursiveDepthFirstSearch : Maze
             {
                 Vector3 pos = new Vector3((tileX * scale) + (scale / 2), 1, (tileZ * scale) + (scale / 2));
                 Instantiate(fStaff, pos, Quaternion.identity);
-                Instantiate(fCheat, new Vector3(pos.x, 4, pos.z), Quaternion.identity);
                 fWeap = true;
                 visited[index].hasEnemyorWeap = true;
 
@@ -185,33 +177,11 @@ public class RecursiveDepthFirstSearch : Maze
             {
                 Vector3 pos = new Vector3((tileX * scale) + (scale / 2), 1, (tileZ * scale) + (scale / 2));
                 Instantiate(lStaff, pos, Quaternion.identity);
-                Instantiate(lCheat, new Vector3(pos.x, 4, pos.z), Quaternion.identity);
                 lWeap = true;
                 visited[index].hasEnemyorWeap = true;
 
                 //Save lightning staff position
                 items.Add(new TileItem(true, new MapLocation(tileX, tileZ), lStaff));
-            }
-        }
-
-        //Mino boss spawn item
-        bool treas = false;
-        while (!treas)
-        {
-            int tileX = Random.Range(1, width);
-            int tileZ = Random.Range(1, depth);
-            MapNodeDFS check = new MapNodeDFS(tileX, tileZ);
-            int index = visited.IndexOf(check);
-            if (!visited[index].hasEnemyorWeap)
-            {
-                Vector3 pos = new Vector3((tileX * scale) + (scale / 2), 2, (tileZ * scale) + (scale / 2));
-                Instantiate(treasure, pos, Quaternion.identity);
-                Instantiate(treasureCheat, new Vector3(pos.x, 6, pos.z), Quaternion.identity);
-                treas = true;
-                visited[index].hasEnemyorWeap = true;
-
-                //Save treasure position
-                items.Add(new TileItem(true, new MapLocation(tileX, tileZ), treasure));
             }
         }
     }
@@ -275,6 +245,12 @@ public class RecursiveDepthFirstSearch : Maze
                     break;
                 }
             } while (visited[index].hasEnemyorWeap);
+        }
+
+        //Spawn mino
+        if(MazeState.instance.mini1 &&  MazeState.instance.mini2)
+        {
+            EnterBoss();
         }
     }
 

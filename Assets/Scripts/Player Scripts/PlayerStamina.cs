@@ -68,7 +68,7 @@ public class PlayerStamina : MonoBehaviour
             //take stamin away when running 
             GameManager.instance.playerStaminaBar.fillAmount = ((float)stamina / (float)staminaOrig);
         }
-        else if (Input.GetButtonDown("Jump") && staminaJumpMinimum < stamina)
+        else if (Input.GetButtonDown("Jump") && staminaJumpMinimum < stamina && GameManager.instance.playerScript.GetCanJump())
         {
             stamina -= jumpCost;
 

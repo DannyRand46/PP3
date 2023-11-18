@@ -22,6 +22,9 @@ TagManager:
   - Golem
   - GolemTransition
   - Combat2Transition
+  - Currency
+  - Currency Text
+  - CubeRoom
   layers:
   - Default
   - TransparentFX

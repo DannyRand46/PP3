@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using static PowerUpManager;
 //using UnityEditor.ProBuilder;
 
 public class GameManager : MonoBehaviour
@@ -37,7 +38,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject menuActiveInterface;
     [SerializeField] TextMeshProUGUI ammoCur;
     [SerializeField] TextMeshProUGUI ammoMax;
+    public GameObject consumables;
     [SerializeField] GameObject PlayerDamageFlashScreen;
+    //[SerializeField] GameObject PowerUpDisplay;
 
     public bool isPaused;
     float timeScaleOrig;
@@ -45,15 +48,22 @@ public class GameManager : MonoBehaviour
     //Only uncomment code once implemented
     void Awake()
     {
+
         instance = this;
         timeScaleOrig = Time.timeScale;
         player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<PlayerController>();
         //enemySpawn = GameObject.FindWithTag("Enemy Spawn");
+
+        PlayerSaveState.Instance.PlayerHealth = 20;
+        PlayerSaveState.Instance.PlayerMana = 500;
+
+        
     }
 
     private void Start()
     {
+        //InitializePlayerState();
         playerSpawn = GameObject.FindWithTag("Respawn");
     }
 
@@ -67,6 +77,29 @@ public class GameManager : MonoBehaviour
             pausedState();
             activeMenu = pauseMenu;
             activeMenu.SetActive(isPaused);
+        }
+    }
+
+    private void InitializePlayerState()
+    {
+        PlayerWeapons playerWeapons = player.GetComponent<PlayerWeapons>();
+
+        if (PlayerSaveState.instance != null)
+        {
+            PowerUpManager powerUpManager = player.GetComponent<PowerUpManager>();
+            if (playerScript != null)
+            {
+                PlayerSaveState.instance.Load();
+                playerScript.Hp = PlayerSaveState.instance.PlayerHealth;
+                playerScript.Mana = PlayerSaveState.instance.PlayerMana;
+
+                foreach (WeaponStats weapon in PlayerSaveState.instance.Weapons) 
+                {
+                    playerWeapons.SetWeaponStats(weapon);
+                }
+
+                powerUpManager.InitializePowerUps();
+            }
         }
     }
 

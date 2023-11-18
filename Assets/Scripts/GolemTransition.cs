@@ -9,6 +9,7 @@ public class GolemTransition : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            PlayerSaveState.instance.Save();
             SceneManager.LoadScene("GrassChallengeRoom");
         }
     }

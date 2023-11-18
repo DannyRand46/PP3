@@ -51,7 +51,7 @@ public class MenuMinoController : MonoBehaviour
             if(fadeRatio >= 1)
             {
                 //TODO: Check for correct Scene Load
-                SceneManager.LoadScene("ProtoType2");
+                SceneManager.LoadScene(1);
             }
         }
     }

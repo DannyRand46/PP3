@@ -18,15 +18,15 @@ public class PlayerController : MonoBehaviour, IDamage
     [SerializeField] CharacterController controller;
     [SerializeField] AudioSource aud;
     [SerializeField] Transform groundRaySource;
+    [SerializeField] Camera playerCamera;
 
     [Header("----Player Stats----")]
-    [Range(1, 50)][SerializeField] float Hp;
-    [Range(1, 500)][SerializeField] float Mana;
+    [Range(1, 50)][SerializeField] public float Hp;
+    [Range(1, 500)][SerializeField] public float Mana;
     [Range(1, 20)][SerializeField] private float playerSpeed;
     [Range(1, 3)][SerializeField] private float sprintMod;
     [Range(1, 3)][SerializeField] int jumpMax;
     [Range(8, 30)][SerializeField] private float jumpHeight;
-    //[Range(-10, 40)][SerializeField] private float gravityMod;
     [Range(-10, -40)][SerializeField] private float gravityValue;
 
     [Header("----Audio----")]
@@ -88,7 +88,6 @@ public class PlayerController : MonoBehaviour, IDamage
         //if its not paused do this 
         if (!GameManager.instance.isPaused)
         {
-            //CheatsyDoodle();
             
             movement();
             Sprint();
@@ -126,7 +125,7 @@ public class PlayerController : MonoBehaviour, IDamage
         Crouched();
         //checks to make sure player is grounded
         RaycastHit GroundCheck;
-        Debug.DrawRay(groundRaySource.position, transform.TransformDirection(Vector3.down * 0.1f));
+        
         if (groundedPlayer && move.normalized.magnitude > 0.3f && !footstepsPlaying)
         {
             StartCoroutine(PlayFootSteps());
@@ -178,6 +177,16 @@ public class PlayerController : MonoBehaviour, IDamage
     IEnumerator PlayFootSteps()
     {
         footstepsPlaying = true;
+
+        if (AudioSettings.instance.GetIsMuted())
+        {
+            audFootStepsvol = 0;
+        }
+        else
+        {
+            audFootStepsvol = AudioSettings.instance.GetNormalizedSXFVolume();
+        }
+
         aud.PlayOneShot(AudFootSteps[Random.Range(0, AudFootSteps.Length)], audFootStepsvol);
 
         if (!isSprinting)
@@ -240,6 +249,10 @@ public class PlayerController : MonoBehaviour, IDamage
             //decrement speed
             playerSpeed /= sprintMod;
 
+            Vector3 position = playerCamera.transform.position;
+            position.y -= 0.6f;
+            playerCamera.transform.position = position;
+
         }//check if grouded check button if true
         else if (groundedPlayer && Input.GetButtonDown("Crouch") && Crouching == true)
         {
@@ -248,6 +261,9 @@ public class PlayerController : MonoBehaviour, IDamage
             controller.height *= 2;
             //give player back speed 
             playerSpeed *= sprintMod;
+            Vector3 position = playerCamera.transform.position;
+            position.y += 0.6f;
+            playerCamera.transform.position = position;
         }
     }
 
@@ -279,6 +295,8 @@ public class PlayerController : MonoBehaviour, IDamage
         StartCoroutine(GameManager.instance.flash());
         Hp -= amount;
         UpdatePlayerUi();
+
+        PlayerSaveState.instance.PlayerHealth = Hp;
         if (Hp <= 0)
         {
             GameManager.instance.youLose();
@@ -292,6 +310,7 @@ public class PlayerController : MonoBehaviour, IDamage
         {
             Mana -= amount;
             UpdatePlayerUi(); 
+            PlayerSaveState.instance.PlayerMana = Mana;
             return true;
         }
         else
@@ -337,35 +356,6 @@ public class PlayerController : MonoBehaviour, IDamage
         return isSprinting;
     }
 
-    //Cheats for devs to play around with
-    void CheatsyDoodle()
-    {
-        if (Input.GetButton("Submit"))
-        {
-            controller.enabled = false;
-            transform.position = GameManager.instance.devCheat.transform.position;
-            controller.enabled = true;
-        }
-        if(Input.GetButton("L"))
-        {
-            controller.enabled = false;
-            transform.position = GameManager.instance.lightningCheat.transform.position;
-            controller.enabled = true;
-        }
-        if(Input.GetButton("F"))
-        {
-            controller.enabled = false;
-            transform.position = GameManager.instance.fireCheat.transform.position;
-            controller.enabled = true;
-        }
-        if(Input.GetButton("T"))
-        {
-            controller.enabled = false;
-            transform.position = GameManager.instance.treasureCheat.transform.position;
-            controller.enabled = true;
-        }
-    }
-
     public void DamageReduction()
     {
         damageReduction = true;
@@ -388,7 +378,6 @@ public class PlayerController : MonoBehaviour, IDamage
             }
             shieldCoroutine = StartCoroutine(ShieldRoutine());
         }
-
     }
 
     public void ShieldOff()
@@ -502,6 +491,11 @@ public class PlayerController : MonoBehaviour, IDamage
     }
 
     public bool IsInvisible() { return isInvisible; }
+
+    public bool GetCanJump()
+    {
+        return (jumpedtimes <= jumpMax);
+    }
 
 
 }
