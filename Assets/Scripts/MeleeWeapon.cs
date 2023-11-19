@@ -21,7 +21,7 @@ public class MeleeWeapon : MonoBehaviour
     }
 
     //Detects collision with another body
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         //Ignores triggers
         if (other.isTrigger)
@@ -29,7 +29,7 @@ public class MeleeWeapon : MonoBehaviour
             return;
         }
 
-        if(!isAttacking)
+        if (other.CompareTag("Player") && !isAttacking)
         {
             StartCoroutine(Attack(other));
         }

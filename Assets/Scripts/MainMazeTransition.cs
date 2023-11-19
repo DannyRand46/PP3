@@ -9,8 +9,10 @@ public class MainMazeTransition : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Currency.instance.GainDrachma(50);
             PlayerSaveState.instance.Save();
             SceneManager.LoadScene("ProtoType2");
+            
         }
     }
 }

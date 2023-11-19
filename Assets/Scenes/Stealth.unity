@@ -777,31 +777,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3911177247983501941, guid: 110832d2e42c16d41b0be7baeecc022f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10
+      value: 10.003
       objectReference: {fileID: 0}
     - target: {fileID: 3911177247983501941, guid: 110832d2e42c16d41b0be7baeecc022f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 15.291586
+      value: 15.296
       objectReference: {fileID: 0}
     - target: {fileID: 3911177247983501941, guid: 110832d2e42c16d41b0be7baeecc022f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: -0.0358358
       objectReference: {fileID: 0}
     - target: {fileID: 3911177247983501941, guid: 110832d2e42c16d41b0be7baeecc022f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.9993577
       objectReference: {fileID: 0}
     - target: {fileID: 3911177247983501941, guid: 110832d2e42c16d41b0be7baeecc022f, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3911177247983501941, guid: 110832d2e42c16d41b0be7baeecc022f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3911177247983501941, guid: 110832d2e42c16d41b0be7baeecc022f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -184.107
       objectReference: {fileID: 0}
     - target: {fileID: 3911177247983501941, guid: 110832d2e42c16d41b0be7baeecc022f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1566,7 +1566,7 @@ GameObject:
   - component: {fileID: 242542383}
   - component: {fileID: 242542382}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Merchant Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8700,7 +8700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3650701537678962107, guid: db93b45d6f6dbe64a869ecabbfbd51cc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.723
       objectReference: {fileID: 0}
     - target: {fileID: 3650701537678962107, guid: db93b45d6f6dbe64a869ecabbfbd51cc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9469,7 +9469,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1902297847}
+  m_TargetGraphic: {fileID: 1563509833}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
