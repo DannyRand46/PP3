@@ -21,6 +21,7 @@ public class StealthPurch : MonoBehaviour
     {
         if (Currency.instance.GetDrachma() >= 80)
         {
+            Currency.instance.SpendDrachma(80);
             //Add first purchaseable limited quantity item
             GameManager.instance.player.GetComponent<PowerUpManager>().AcquirePowerUp(PowerUpManager.PowerUpType.Invisibility);
         }
@@ -34,6 +35,7 @@ public class StealthPurch : MonoBehaviour
     {
         if(Currency.instance.GetDrachma() >= 30)
         {
+            Currency.instance.SpendDrachma(30);
             //Add second purchaseable limited quantity item
             GameManager.instance.player.GetComponent<PowerUpManager>().AcquirePowerUp(PowerUpManager.PowerUpType.SpeedBoost);
         }

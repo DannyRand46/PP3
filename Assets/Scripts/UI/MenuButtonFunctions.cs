@@ -15,6 +15,7 @@ public class MenuButtonFunctions : MonoBehaviour
     {
         //restarts game by reloading the active scene
         SceneManager.LoadScene("Prototype2");
+        Currency.instance.SpendDrachma(Currency.instance.GetDrachma() - 50);
         GameManager.instance.unpausedState();
     }
 
@@ -27,6 +28,7 @@ public class MenuButtonFunctions : MonoBehaviour
     public void goToMainMenu()
     {
         GameManager.instance.unpausedState();
+        Currency.instance.SpendDrachma(Currency.instance.GetDrachma());
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         SceneManager.LoadScene(0);
