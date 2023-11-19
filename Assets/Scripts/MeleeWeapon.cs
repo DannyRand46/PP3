@@ -23,7 +23,7 @@ public class MeleeWeapon : MonoBehaviour
     //Detects collision with another body
     private void OnTriggerStay(Collider other)
     {
-        Ignores triggers
+        //Ignores triggers
         if (other.isTrigger)
         {
             return;
