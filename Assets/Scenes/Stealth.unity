@@ -1566,7 +1566,7 @@ GameObject:
   - component: {fileID: 242542383}
   - component: {fileID: 242542382}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Merchant Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8700,7 +8700,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3650701537678962107, guid: db93b45d6f6dbe64a869ecabbfbd51cc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.723
       objectReference: {fileID: 0}
     - target: {fileID: 3650701537678962107, guid: db93b45d6f6dbe64a869ecabbfbd51cc, type: 3}
       propertyPath: m_LocalPosition.z
