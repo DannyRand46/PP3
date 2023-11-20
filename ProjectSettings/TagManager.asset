@@ -28,6 +28,8 @@ TagManager:
   - StoneGolem
   - Enemy
   - Necromancer
+  - Consumable
+  - Consumables
   layers:
   - Default
   - TransparentFX

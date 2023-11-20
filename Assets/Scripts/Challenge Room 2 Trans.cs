@@ -28,7 +28,7 @@ public class ChallengeRoom2Trans : MonoBehaviour
                     break;
                 }
             }
-
+            PlayerSaveState.instance.Save();
             SceneManager.LoadScene("ChallengeRoom3");
         }
     }

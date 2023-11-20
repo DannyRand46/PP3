@@ -30,15 +30,15 @@ public class LeaveShop : MonoBehaviour
             }
             else if (fade == null)
             {
-                SceneManager.LoadScene("ProtoType2");
                 PlayerSaveState.instance.Save();
+                SceneManager.LoadScene("ProtoType2");
             }
         }
         if (fade != null)
         {
             if (fade.f == false && doorcheck)
             {
-
+                PlayerSaveState.instance.Save();
                 SceneManager.LoadScene("ProtoType2");
             }
         }

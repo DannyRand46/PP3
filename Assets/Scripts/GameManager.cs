@@ -48,17 +48,10 @@ public class GameManager : MonoBehaviour
     //Only uncomment code once implemented
     void Awake()
     {
-
         instance = this;
         timeScaleOrig = Time.timeScale;
         player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<PlayerController>();
-        //enemySpawn = GameObject.FindWithTag("Enemy Spawn");
-
-        PlayerSaveState.Instance.PlayerHealth = 20;
-        PlayerSaveState.Instance.PlayerMana = 500;
-
-        
     }
 
     private void Start()
@@ -89,7 +82,6 @@ public class GameManager : MonoBehaviour
             PowerUpManager powerUpManager = player.GetComponent<PowerUpManager>();
             if (playerScript != null)
             {
-                PlayerSaveState.instance.Load();
                 playerScript.Hp = PlayerSaveState.instance.PlayerHealth;
                 playerScript.Mana = PlayerSaveState.instance.PlayerMana;
 

@@ -26,7 +26,10 @@ public class PlayerWeapons : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InitializeWeapons();
+        if (PlayerSaveState.instance != null)
+        {
+            InitializeWeapons();
+        }
         changeWeapon();
     }
 

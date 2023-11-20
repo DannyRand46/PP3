@@ -29,7 +29,7 @@ public class StealthSceneTrans : MonoBehaviour
                     break;
                 }
             }
-            
+            PlayerSaveState.instance.Save();
             SceneManager.LoadScene("Stealth");
         }
     }

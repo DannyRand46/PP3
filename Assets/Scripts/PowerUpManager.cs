@@ -148,7 +148,7 @@ public class PowerUpManager : MonoBehaviour
         if (!acquiredPowerUps[type])
         {
             acquiredPowerUps[type] = true;
-            PlayerSaveState.Instance.PowerUps[type] = true;
+            PlayerSaveState.instance.PowerUps[type] = true;
 
             if (!availablePowerUps.Contains(type))
             {
@@ -174,7 +174,7 @@ public class PowerUpManager : MonoBehaviour
 
     public void InitializePowerUps()
     {
-        foreach (KeyValuePair<PowerUpType, bool> entry in PlayerSaveState.Instance.PowerUps) 
+        foreach (KeyValuePair<PowerUpType, bool> entry in PlayerSaveState.instance.PowerUps) 
         {
             if (entry.Value) 
             {

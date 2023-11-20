@@ -74,11 +74,16 @@ public class PlayerController : MonoBehaviour, IDamage
 
     private void Start()
     {
-        
-        Layer_Mask = LayerMask.GetMask("Wall") + LayerMask.GetMask("Ground");
         HPOrig = Hp;
         ManaOrig = Mana;
         spawnPlayer();
+        if (PlayerSaveState.instance != null)
+        {
+            Hp = PlayerSaveState.instance.PlayerHealth;
+            Mana = PlayerSaveState.instance.PlayerMana;
+            UpdatePlayerUi();
+        }
+        Layer_Mask = LayerMask.GetMask("Wall") + LayerMask.GetMask("Ground");
         playerDash = GetComponent<PlayerDash>();
     }
 

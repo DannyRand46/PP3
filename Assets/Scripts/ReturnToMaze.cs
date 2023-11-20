@@ -32,9 +32,9 @@ public class ReturnToMaze : MonoBehaviour
             }
             else if (fade == null)
             {
+                PlayerSaveState.instance.Save();
                 SceneManager.LoadScene("ProtoType2");
                 Currency.instance.GainDrachma(50);
-                PlayerSaveState.instance.Save();
             }
         }
         if (fade != null)

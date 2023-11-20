@@ -8,13 +8,17 @@ public class Consumeables : MonoBehaviour
     [SerializeField] TMP_Text potCount;
     [SerializeField] int hpRestore;
 
-    int pots;
+    public int pots;
 
     // Start is called before the first frame update
     void Start()
     {
         //Set pot count to saved amount
-
+        if(PlayerSaveState.instance != null)
+        {
+            pots = PlayerSaveState.instance.pots;
+            potCount.text = pots.ToString("F0");
+        }
     }
 
     private void Update()
