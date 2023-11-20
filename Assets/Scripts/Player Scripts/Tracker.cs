@@ -57,4 +57,22 @@ public class Tracker : MonoBehaviour
     {
         return GameObject.FindWithTag(objs[index].tag);
     }
+
+    public string GetTag()
+    {
+        string output;
+        if(index == 0 && !MazeState.instance.mini1)
+        {
+            output = "NecroTransition";
+        }
+        else if(index == 0 && !MazeState.instance.mini2)
+        {
+            output = "GolemTransition";
+        }
+        else
+        {
+            output = objs[index].tag;
+        }
+        return output;
+    }
 }

@@ -24,6 +24,10 @@ public class Currency : MonoBehaviour
         //Destroy this instance if there is already one in existance
         else if (instance != this)
         {
+            if (currDisplay != null)
+            {
+                instance.SetDisplay();
+            }
             Destroy(gameObject);
         }
 
@@ -41,8 +45,7 @@ public class Currency : MonoBehaviour
         currText.text = drachma.ToString("F0");
         if(currDisplay != null && !activeDis)
         {
-            currDisplay.SetActive(true);
-            activeDis = true;
+            SetDisplay();
         }
     }
 
@@ -56,13 +59,23 @@ public class Currency : MonoBehaviour
     //Resets money on respawn
     public void ResetDrachma()
     {
-        drachma = 0;
-        currDisplay.SetActive(false);
+        drachma = 50;
+    }
+
+    public void SetDisplay()
+    {
+        currDisplay.SetActive(true);
+        activeDis = true;
     }
 
     //Getter for drachma count
     public int GetDrachma()
     {
         return drachma;
+    }
+
+    public void Cease()
+    {
+        DestroyImmediate(gameObject);
     }
 }
