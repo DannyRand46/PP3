@@ -1865,10 +1865,10 @@ MonoBehaviour:
 
     [Shift] Run
 
-    [LeftCtrl] Slide (while running)
+    [LeftCtrl] Crouch
 
-    [C]
-    Crouch
+    [C] Sllide (while
+    running)
 
     [Q] Dash (Provides Invincibility)
 
@@ -1884,7 +1884,9 @@ MonoBehaviour:
     [Scroll]
     Swap Weapons
 
-    [P] Open Pause Menu'
+    [P] Open Pause Menu
+
+    [F] Consume Health Potion'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
