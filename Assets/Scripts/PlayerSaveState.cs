@@ -5,7 +5,7 @@ using static PowerUpManager;
 
 public class PlayerSaveState : MonoBehaviour
 {
-    public static PlayerSaveState instance = new PlayerSaveState();
+    public static PlayerSaveState instance;
     //Stats
     public float PlayerHealth;
     public float PlayerMana;
