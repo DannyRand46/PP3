@@ -88,7 +88,7 @@ public class Necromancer : MonoBehaviour
     IEnumerator attackMelee()
     {
         isAttacking = true;
-        animator.SetTrigger("Attack");
+        animator.SetTrigger("Melee1");
 
         yield return new WaitForSeconds(attackAnimationDelay);
 
@@ -108,7 +108,7 @@ public class Necromancer : MonoBehaviour
     IEnumerator attackMelee2()
     {
         isAttacking = true;
-        animator.SetTrigger("Attack");
+        animator.SetTrigger("Melee2");
 
         yield return new WaitForSeconds(attackAnimationDelay);
 
@@ -128,7 +128,7 @@ public class Necromancer : MonoBehaviour
     IEnumerator attackCasting()
     {
         isAttacking = true;
-        animator.SetTrigger("Attack");
+        animator.SetTrigger("Magika");
 
         yield return new WaitForSeconds(attackAnimationDelay);
 
@@ -184,6 +184,7 @@ public class Necromancer : MonoBehaviour
             necro.enabled = false;
             animator.SetBool("Death", true);
             StopAllCoroutines();
+            Destroy(gameObject);
             Currency.instance.GainDrachma(100);
             MazeState.instance.mini1 = true;
         }

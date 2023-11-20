@@ -527,7 +527,7 @@ GameObject:
   - component: {fileID: 2281980498951479833}
   m_Layer: 8
   m_Name: StoneGolem
-  m_TagString: Untagged
+  m_TagString: StoneGolem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
