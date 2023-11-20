@@ -26,6 +26,8 @@ TagManager:
   - Currency Text
   - CubeRoom
   - StoneGolem
+  - Enemy
+  - Necromancer
   layers:
   - Default
   - TransparentFX
