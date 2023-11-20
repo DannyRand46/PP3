@@ -88,7 +88,7 @@ public class Necromancer : MonoBehaviour
     IEnumerator attackMelee()
     {
         isAttacking = true;
-        animator.SetTrigger("Attack");
+        animator.SetTrigger("Melee1");
 
         yield return new WaitForSeconds(attackAnimationDelay);
 
@@ -108,7 +108,7 @@ public class Necromancer : MonoBehaviour
     IEnumerator attackMelee2()
     {
         isAttacking = true;
-        animator.SetTrigger("Attack");
+        animator.SetTrigger("Melee2");
 
         yield return new WaitForSeconds(attackAnimationDelay);
 
@@ -128,7 +128,7 @@ public class Necromancer : MonoBehaviour
     IEnumerator attackCasting()
     {
         isAttacking = true;
-        animator.SetTrigger("Attack");
+        animator.SetTrigger("Magika");
 
         yield return new WaitForSeconds(attackAnimationDelay);
 
