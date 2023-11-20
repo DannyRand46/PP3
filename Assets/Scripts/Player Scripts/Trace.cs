@@ -12,7 +12,8 @@ public class Trace : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = GameManager.instance.player.GetComponent<Tracker>().GetCurrSel();
+        string targetTag = GameManager.instance.player.GetComponent<Tracker>().GetTag();
+        target = GameObject.FindWithTag(targetTag);
         agent = gameObject.GetComponent<NavMeshAgent>();
         Destroy(gameObject, timer);
     }

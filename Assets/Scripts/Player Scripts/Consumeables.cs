@@ -17,6 +17,14 @@ public class Consumeables : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if(Input.GetButtonDown("Drink"))
+        {
+            UsePot();
+        }
+    }
+
     public void GainPot()
     {
         pots++;

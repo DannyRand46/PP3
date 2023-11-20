@@ -9,10 +9,21 @@ public class MainMazeTransition : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Currency.instance.GainDrachma(50);
-            PlayerSaveState.instance.Save();
-            SceneManager.LoadScene("ProtoType2");
-            
+            if (EnemiesDefeated())
+            {
+                Currency.instance.GainDrachma(50);
+                PlayerSaveState.instance.Save();
+                SceneManager.LoadScene("ProtoType2");
+            }
         }
+    }
+
+    private bool EnemiesDefeated()
+    {
+        bool noEnemy = GameObject.FindGameObjectsWithTag("Enemy").Length == 0;
+        bool stoneGolemDefeated = GameObject.FindGameObjectsWithTag("StoneGolem").Length == 0;
+        bool necroMancerDefeated = GameObject.FindGameObjectsWithTag("Necromancer").Length == 0;
+
+        return noEnemy && stoneGolemDefeated && necroMancerDefeated;
     }
 }
