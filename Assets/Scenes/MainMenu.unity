@@ -2599,6 +2599,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 742756460}
+  - component: {fileID: 742756464}
   - component: {fileID: 742756463}
   - component: {fileID: 742756462}
   - component: {fileID: 742756461}
@@ -2673,9 +2674,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: exitgame
+      - m_Target: {fileID: 742756464}
+        m_TargetAssemblyTypeName: MenuButtonFunctions, Assembly-CSharp
+        m_MethodName: quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2735,6 +2736,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 742756459}
   m_CullTransparentMesh: 1
+--- !u!114 &742756464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742756459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 240a672c96b382043b5dfb7a7e7243b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &751157897
 GameObject:
   m_ObjectHideFlags: 0

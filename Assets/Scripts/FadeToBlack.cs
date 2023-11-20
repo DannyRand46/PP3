@@ -6,9 +6,26 @@ using UnityEngine.UI;
 
 public class FadeToBlack : MonoBehaviour
 {
+    public static FadeToBlack instance;
+
     [SerializeField] Image fade;
     public bool f;
     float fadeRatio;
+
+    private void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+        else if(instance != this)
+        {
+            DestroyImmediate(instance.gameObject);
+            instance = this;
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {

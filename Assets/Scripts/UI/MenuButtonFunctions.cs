@@ -28,7 +28,7 @@ public class MenuButtonFunctions : MonoBehaviour
     public void goToMainMenu()
     {
         GameManager.instance.unpausedState();
-        Destroy(Currency.instance);
+        Currency.instance.Cease();
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         SceneManager.LoadScene(0);

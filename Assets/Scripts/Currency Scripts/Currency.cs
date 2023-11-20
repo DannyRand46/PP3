@@ -73,4 +73,9 @@ public class Currency : MonoBehaviour
     {
         return drachma;
     }
+
+    public void Cease()
+    {
+        DestroyImmediate(gameObject);
+    }
 }
