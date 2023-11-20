@@ -16,6 +16,7 @@ public class MenuButtonFunctions : MonoBehaviour
         //restarts game by reloading the active scene
         SceneManager.LoadScene("Prototype2");
         Currency.instance.ResetDrachma();
+        Destroy(PlayerSaveState.instance.gameObject);
         GameManager.instance.unpausedState();
     }
 
@@ -29,6 +30,7 @@ public class MenuButtonFunctions : MonoBehaviour
     {
         GameManager.instance.unpausedState();
         Currency.instance.Cease();
+        Destroy(PlayerSaveState.instance.gameObject);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         SceneManager.LoadScene(0);

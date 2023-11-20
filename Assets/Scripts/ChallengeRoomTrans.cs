@@ -29,7 +29,7 @@ public class ChallengeRoomTrans : MonoBehaviour
                     break;
                 }
             }
-
+            PlayerSaveState.instance.Save();
             SceneManager.LoadScene("Kevin's Scene");
         }
     }

@@ -25,6 +25,7 @@ TagManager:
   - Currency
   - Currency Text
   - CubeRoom
+  - Consumables
   layers:
   - Default
   - TransparentFX
